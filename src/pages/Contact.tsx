@@ -54,7 +54,7 @@ export const Contact = () => {
   };
 
   return (
-    <div className="pt-32 pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="Contact Us | Orvelo" 
         description="Get in touch with Orvelo Consulting Group. Contact our team to request a visibility audit, ask about our GEO services, or schedule a strategic consultation."

@@ -47,7 +47,7 @@ export const CaseStudyDetail = () => {
         style={{ scaleX }}
       />
 
-      <div className="pt-36 pb-32 px-6 md:px-24 max-w-7xl mx-auto">
+      <div className="pt-24 md:pt-36 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}

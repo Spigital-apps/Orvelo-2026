@@ -285,7 +285,7 @@ export const DiscoverySprint = () => {
   ];
 
   return (
-    <div className="pt-32 pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="The Discovery Sprint™ | AI Workflow Discovery | Orvelo" 
         description="Book Orvelo’s Discovery Sprint™ to identify practical AI opportunities, workflow gaps, business problems, and the right AI solutions for your SMB or manufacturing company."

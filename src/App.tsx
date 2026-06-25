@@ -155,21 +155,23 @@ const OrbitalBackground = () => {
       <div className="absolute bottom-[10%] left-[-10%] w-[45vw] h-[45vw] bg-[#31e8fb]/5 blur-[150px] rounded-full" />
       <div className="absolute top-[35%] left-[25%] w-[40vw] h-[40vw] bg-amber-50/40 blur-[130px] rounded-full" />
       
-      {/* Decorative clean line coordinates */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw]">
-        {[1, 2, 3, 4].map((i) => (
-          <motion.div
-            key={i}
-            className="orbital-path left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            style={{
-              width: `${i * 30}%`,
-              height: `${i * 30}%`,
-              opacity: 0.15 / i,
-            }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 80 + i * 30, repeat: Infinity, ease: 'linear' }}
-          />
-        ))}
+      {/* Decorative clean line coordinates wrapper to prevent mobile overflow */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw]">
+          {[1, 2, 3, 4].map((i) => (
+            <motion.div
+              key={i}
+              className="orbital-path left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              style={{
+                width: `${i * 30}%`,
+                height: `${i * 30}%`,
+                opacity: 0.15 / i,
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 80 + i * 30, repeat: Infinity, ease: 'linear' }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

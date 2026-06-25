@@ -205,7 +205,7 @@ export const MicroApplications = () => {
   ];
 
   return (
-    <div className="pt-32 pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="AI Micro Applications for Manufacturing Companies | Orvelo" 
         description="Build small, highly-focused AI tools that solve specific business problems in your sales, RFQ, engineering, and operations workflows."

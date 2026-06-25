@@ -46,18 +46,18 @@ export const Home = () => {
       />
       
       {/* SECTION 1: HERO */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center px-6 md:px-24 pt-40 pb-24 z-10 overflow-hidden">
+      <section className="relative w-full min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 md:px-24 pt-24 pb-16 sm:pt-40 sm:pb-24 z-10 overflow-hidden">
         
-        <div className="relative z-10 text-center max-w-5xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 text-center w-full max-w-5xl mx-auto flex flex-col items-center">
           {/* Tagline pill */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#cb4b16]/5 border border-[#cb4b16]/10 text-[#cb4b16] font-bold text-[10px] uppercase tracking-widest mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#cb4b16]/5 border border-[#cb4b16]/10 text-[#cb4b16] font-bold text-[10px] uppercase tracking-wider sm:tracking-widest mb-6 sm:mb-8 text-center max-w-full"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            Fractional AI & Automation for SMBs
+            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">Fractional AI & Automation for SMBs</span>
           </motion.div>
 
           <motion.div
@@ -66,16 +66,16 @@ export const Home = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 leading-[1.05] text-balance mb-8 font-sans">
-              AI that pays for itself, <br />
+            <h1 className="text-[2.25rem] xs:text-[2.75rem] sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.05] text-balance mb-6 sm:mb-8 font-sans">
+              AI that pays for itself, <br className="hidden sm:inline" />{" "}
               <span className="font-serif italic font-normal text-emerald-700">or you don’t pay.</span>
             </h1>
             
-            <p className="text-base md:text-xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+            <p className="text-sm sm:text-base md:text-xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12">
               We find the manual work eating your week, automate one process at a fixed price, and prove it with a number you already track. Backed by a full money-back guarantee.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center w-full max-w-md mx-auto sm:max-w-none">
               <a 
                 href="https://calendly.com/orvelo-info/30min"
                 target="_blank"
@@ -99,7 +99,7 @@ export const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-16 w-full max-w-5xl rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-2xl relative bg-white group flex flex-col md:block"
+            className="mt-10 sm:mt-16 w-full max-w-5xl rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-2xl relative bg-white group flex flex-col md:block"
           >
             <img 
               src="/orvelopilot.png" 
@@ -147,14 +147,14 @@ export const Home = () => {
       </section>
 
       {/* SECTION 2: THE BENTO VALUE GRID */}
-      <section id="who" className="relative py-32 px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+      <section id="who" className="relative w-full py-16 md:py-32 px-4 sm:px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
           <SectionLabel>What We Stand For</SectionLabel>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-950 mt-4 leading-tight font-sans">
-            One process. Fixed price. <br />
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-950 mt-4 leading-tight font-sans text-balance">
+            One process. Fixed price. <br className="hidden sm:inline" />
             Working proof in weeks.
           </h2>
-          <p className="text-slate-500 text-lg md:text-xl font-light mt-4 leading-relaxed">
+          <p className="text-slate-500 text-base sm:text-lg md:text-xl font-light mt-4 leading-relaxed">
             We don’t write thick consulting slide decks. We look at where you lose hours, build custom integrations to automate them, and back the work with a full guarantee.
           </p>
         </div>
@@ -163,24 +163,24 @@ export const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
           
           {/* Card 1: The Discovery Sprint (Large Left Card) */}
-          <div className="md:col-span-6 bg-white border border-slate-200/60 rounded-[2.5rem] p-10 flex flex-col justify-between shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:border-[#cb4b16]/30 hover:shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500 relative overflow-hidden group">
+          <div className="md:col-span-6 bg-white border border-slate-200/60 rounded-[2.5rem] p-6 sm:p-10 flex flex-col justify-between shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:border-[#cb4b16]/30 hover:shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-50 rounded-full blur-3xl -translate-y-10 translate-x-10 group-hover:scale-110 transition-transform" />
             <div className="relative z-10">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#cb4b16] bg-[#cb4b16]/5 px-3 py-1 rounded-full">Core Offer</span>
-              <h3 className="text-3xl font-black text-slate-900 mt-6 mb-4 leading-tight">The Discovery Sprint™</h3>
-              <p className="text-slate-500 text-base font-light leading-relaxed mb-8">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-[#cb4b16] bg-[#cb4b16]/5 px-3 py-1 rounded-full inline-block">Core Offer</span>
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-6 mb-4 leading-tight">The Discovery Sprint™</h3>
+              <p className="text-slate-500 text-sm sm:text-base font-light leading-relaxed mb-8">
                 A single process mapped, integrated, and fully automated inside your business at a one-time fixed price. We agree on a target metric (like reducing response times to minutes) and implement it end-to-end.
               </p>
             </div>
             <div className="relative z-10">
-              <div className="border-t border-slate-100 pt-6 flex justify-between items-center">
+              <div className="border-t border-slate-100 pt-6 flex flex-col sm:flex-row gap-4 sm:justify-between sm:items-center">
                 <div>
                   <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mb-1">Time to build</div>
-                  <div className="text-lg font-bold text-slate-800">4-6 Weeks</div>
+                  <div className="text-base sm:text-lg font-bold text-slate-800">4-6 Weeks</div>
                 </div>
                 <Link 
                   to="/the-discovery-sprint"
-                  className="px-5 py-2.5 bg-slate-900 hover:bg-[#cb4b16] text-white font-bold rounded-full text-[10px] uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                  className="px-5 py-2.5 bg-slate-900 hover:bg-[#cb4b16] text-white font-bold rounded-full text-[10px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 self-start sm:self-auto"
                 >
                   See details <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
@@ -189,24 +189,24 @@ export const Home = () => {
           </div>
 
           {/* Card 2: Fractional leadership (Right upper card) */}
-          <div className="md:col-span-6 bg-blue-600 text-white border border-transparent rounded-[2.5rem] p-10 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+          <div className="md:col-span-6 bg-blue-600 text-white border border-transparent rounded-[2.5rem] p-6 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-20 translate-x-20 group-hover:scale-110 transition-transform" />
             <div className="relative z-10">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-blue-100 bg-white/10 px-3 py-1 rounded-full">Fractional Advisory</span>
-              <h3 className="text-3xl font-black text-white mt-6 mb-4 leading-tight">Fractional CTO & AI Advisory</h3>
-              <p className="text-blue-100 text-base font-light leading-relaxed mb-8">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-blue-100 bg-white/10 px-3 py-1 rounded-full inline-block">Fractional Advisory</span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white mt-6 mb-4 leading-tight">Fractional CTO & AI Advisory</h3>
+              <p className="text-blue-100 text-sm sm:text-base font-light leading-relaxed mb-8">
                 Guidance before software. Get senior technology strategy from Beta, Karthikeyan, Muthu, or Senthil fractionally. Direction, scoping, and process architecture without the cost of a full-time hire.
               </p>
             </div>
             <div className="relative z-10">
-              <div className="border-t border-white/10 pt-6 flex justify-between items-center">
+              <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row gap-4 sm:justify-between sm:items-center">
                 <div>
                   <div className="text-[10px] uppercase tracking-wider text-blue-200 font-bold mb-1">Our Experts</div>
                   <div className="text-sm font-bold text-white">4 Leadership Partners</div>
                 </div>
                 <a 
                   href="#leadership"
-                  className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full text-[10px] uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                  className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full text-[10px] uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 self-start sm:self-auto"
                 >
                   Meet leadership
                 </a>
@@ -215,7 +215,7 @@ export const Home = () => {
           </div>
 
           {/* Card 3: Revenue automation (Bottom Left) */}
-          <div className="md:col-span-4 bg-sky-50 border border-slate-200/50 rounded-[2.5rem] p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-500 group">
+          <div className="md:col-span-4 bg-sky-50 border border-slate-200/50 rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-500 group">
             <div>
               <div className="w-11 h-11 rounded-2xl bg-white flex items-center justify-center text-sky-600 shadow-sm border border-slate-100">
                 <Workflow className="w-5 h-5" />
@@ -228,7 +228,7 @@ export const Home = () => {
           </div>
 
           {/* Card 4: The Guarantee (Bottom Center) */}
-          <div className="md:col-span-4 bg-emerald-50/70 border border-slate-200/50 rounded-[2.5rem] p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-500 group">
+          <div className="md:col-span-4 bg-emerald-50/70 border border-slate-200/50 rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-500 group">
             <div>
               <div className="w-11 h-11 rounded-2xl bg-white flex items-center justify-center text-emerald-600 shadow-sm border border-slate-100">
                 <ShieldCheck className="w-5 h-5" />
@@ -241,7 +241,7 @@ export const Home = () => {
           </div>
 
           {/* Card 5: Your Stack Kept (Bottom Right) */}
-          <div className="md:col-span-4 bg-white border border-slate-200/60 rounded-[2.5rem] p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-500 group">
+          <div className="md:col-span-4 bg-white border border-slate-200/60 rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-500 group">
             <div>
               <div className="w-11 h-11 rounded-2xl bg-[#F4F7FB] flex items-center justify-center text-slate-600 shadow-sm border border-slate-200/30">
                 <Layers className="w-5 h-5" />
@@ -257,13 +257,13 @@ export const Home = () => {
       </section>
 
       {/* SECTION 3: WHERE YOUR WEEK ACTUALLY GOES */}
-      <section id="where" className="relative py-32 px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
+      <section id="where" className="relative w-full py-16 md:py-32 px-4 sm:px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <SectionLabel>Process Friction</SectionLabel>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 mt-4 leading-tight">
-              Where your week <br />
+              Where your week <br className="hidden sm:inline" />
               <span className="font-serif italic font-normal text-slate-500">actually goes.</span>
             </h2>
             <p className="text-slate-500 text-base md:text-lg font-light mt-6 leading-relaxed max-w-md">
@@ -324,7 +324,7 @@ export const Home = () => {
                   ease: [0.16, 1, 0.3, 1],
                   delay: idx * 0.08
                 }}
-                className="bg-white border border-slate-200/50 p-8 rounded-3xl shadow-[0_4px_15px_rgba(15,23,42,0.01)] hover:border-[#cb4b16]/30 hover:shadow-md transition-all duration-500 flex gap-6 items-start group"
+                className="bg-white border border-slate-200/50 p-6 sm:p-8 rounded-3xl shadow-[0_4px_15px_rgba(15,23,42,0.01)] hover:border-[#cb4b16]/30 hover:shadow-md transition-all duration-500 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start group"
               >
                 <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 text-xs font-mono font-bold text-slate-400 group-hover:bg-[#cb4b16]/5 group-hover:text-[#cb4b16] transition-colors duration-500">
                   {item.num}
@@ -342,23 +342,23 @@ export const Home = () => {
       </section>
 
       {/* SECTION 4: THE ADVISORY CONTRAST DIVIDER (Dark Accent) */}
-      <section className="relative py-24 px-6 md:px-24 z-10 bg-[#0F172A] text-white my-16 rounded-[3.5rem] max-w-7xl mx-auto overflow-hidden">
+      <section className="relative w-full py-24 px-4 sm:px-6 md:px-24 z-10 bg-[#0F172A] text-white my-16 rounded-[2.5rem] sm:rounded-[3.5rem] max-w-7xl mx-auto overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#31e8fb] font-extrabold mb-6">Reality Check</p>
-          <h2 className="text-2xl md:text-4xl font-light leading-relaxed tracking-wide text-balance mb-10 font-sans">
-            "Sixty-one percent of small businesses have tried AI. <br />
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-light leading-relaxed tracking-wide text-balance mb-10 font-sans">
+            "Sixty-one percent of small businesses have tried AI. <br className="hidden sm:inline" />{" "}
             <span className="font-semibold text-white">Only one in four</span> saw a result they could point to."
           </h2>
           <div className="h-px w-20 bg-slate-700 mx-auto mb-10" />
-          <p className="text-slate-400 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
             The problem was never the technology. It was expensive advice from agencies with no skin in the game. That’s why we put ours in writing: a fixed price, one measurable target, and a refund if we miss.
           </p>
         </div>
       </section>
 
       {/* SECTION 5: HOW THE SPRINT WORKS */}
-      <section id="sprint" className="relative py-32 px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
+      <section id="sprint" className="relative w-full py-16 md:py-32 px-4 sm:px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <SectionLabel>Our Method</SectionLabel>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-950 mt-4 leading-tight">
@@ -398,7 +398,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white border border-slate-200/60 p-8 rounded-3xl shadow-[0_4px_15px_rgba(15,23,42,0.01)] hover:border-[#cb4b16]/30 transition-all duration-500 relative"
+              className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-3xl shadow-[0_4px_15px_rgba(15,23,42,0.01)] hover:border-[#cb4b16]/30 transition-all duration-500 relative"
             >
               <div className="text-4xl font-black font-serif italic text-slate-200 mb-6 group-hover:text-[#cb4b16]/20 transition-colors">
                 {item.step}
@@ -411,7 +411,7 @@ export const Home = () => {
       </section>
 
       {/* SECTION 6: LEADERSHIP */}
-      <section id="leadership" className="relative py-32 px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
+      <section id="leadership" className="relative w-full py-16 md:py-32 px-4 sm:px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <SectionLabel>Leadership Advisory</SectionLabel>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-950 mt-4 leading-tight">
@@ -493,7 +493,7 @@ export const Home = () => {
       </section>
 
       {/* SECTION 7: CASE STUDIES */}
-      <section id="case-studies" className="relative py-32 px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60 bg-white rounded-[3rem] my-12 shadow-[0_10px_40px_rgba(15,23,42,0.02)] border border-slate-200/50">
+      <section id="case-studies" className="relative w-full py-16 md:py-32 px-4 sm:px-6 md:px-24 z-10 max-w-7xl mx-auto border-t border-slate-200/60 bg-white rounded-[3rem] my-12 shadow-[0_10px_40px_rgba(15,23,42,0.02)] border border-slate-200/50">
         <div className="mb-16">
           <SectionLabel className="text-brand-blue border-blue-200 bg-blue-50/50">Our Evidence</SectionLabel>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-950 mt-4 leading-tight">What this looks like in practice.</h2>
@@ -532,11 +532,11 @@ export const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.04 }}
                 viewport={{ once: true }}
-                className="min-w-[320px] md:min-w-[430px] snap-start"
+                className="min-w-[280px] xs:min-w-[320px] sm:min-w-[430px] snap-start"
               >
                 <Link 
                   to={`/case-studies/${study.slug}`}
-                  className="bg-slate-50 p-8 rounded-[2rem] border border-slate-200/50 hover:border-[#cb4b16]/30 hover:bg-white hover:shadow-lg transition-all duration-500 h-[380px] flex flex-col justify-between group"
+                  className="bg-slate-50 p-6 sm:p-8 rounded-[2rem] border border-slate-200/50 hover:border-[#cb4b16]/30 hover:bg-white hover:shadow-lg transition-all duration-500 h-[380px] flex flex-col justify-between group"
                 >
                   <div>
                     <div className="text-[9px] uppercase tracking-widest text-[#cb4b16] font-bold mb-4">{study.category}</div>
@@ -569,7 +569,7 @@ export const Home = () => {
       </section>
 
       {/* SECTION 8: FINAL CTA */}
-      <section className="relative py-32 px-6 md:px-24 z-10 text-center max-w-5xl mx-auto">
+      <section className="relative w-full py-16 md:py-32 px-4 sm:px-6 md:px-24 z-10 text-center max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -578,8 +578,8 @@ export const Home = () => {
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(203,75,22,0.04)_0%,transparent_70%)] pointer-events-none" />
 
-          <h2 className="text-4xl md:text-6xl font-black mb-6 text-slate-900 leading-tight">
-            Thirty minutes. No deck. <br />
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 text-slate-900 leading-tight">
+            Thirty minutes. No deck. <br className="hidden sm:inline" />
             <span className="font-serif italic font-normal text-emerald-700">Just questions about your week.</span>
           </h2>
           

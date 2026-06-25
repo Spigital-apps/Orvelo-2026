@@ -250,7 +250,7 @@ export const GeoServicesSmb = () => {
   ];
 
   return (
-    <div className="pt-32 pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="GEO Services for SMBs | Orvelo" 
         description="Orvelo helps SMBs improve visibility across ChatGPT, Gemini, Claude, Perplexity, Copilot, and Google AI Overviews with GEO strategy, AI search audits, and retrieval-ready content."

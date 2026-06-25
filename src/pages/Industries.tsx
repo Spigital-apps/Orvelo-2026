@@ -149,7 +149,7 @@ export const Industries = () => {
   ];
 
   return (
-    <div className="pt-32 pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="Industries We Serve | Orvelo AI Solutions" 
         description="Orvelo builds practical AI solutions for growing businesses in Manufacturing, SMBs, Healthcare, Education, E-commerce, Restaurants, and SaaS."

@@ -262,7 +262,7 @@ export const MicroApplicationsSmb = () => {
   ];
 
   return (
-    <div className="pt-32 pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="AI Micro Applications for SMBs | Orvelo" 
         description="Orvelo builds AI micro applications for SMBs, including proposal generators, RFQ summary assistants, datasheet generators, sales chatbots, and management report assistants."

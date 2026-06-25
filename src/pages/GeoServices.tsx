@@ -199,7 +199,7 @@ export const GeoServices = () => {
   ];
 
   return (
-    <div className="pt-32 pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-24 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="Generative Engine Optimization (GEO) for Manufacturing | Orvelo" 
         description="Get your manufacturing company recommended by ChatGPT, Gemini, Claude, Perplexity, and AI search engines."
