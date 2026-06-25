@@ -5,7 +5,12 @@ import { Home } from './pages/Home';
 import { CaseStudiesPage } from './pages/CaseStudies';
 import { CaseStudyDetail } from './pages/CaseStudyDetail';
 import { GeoServices } from './pages/GeoServices';
+import { GeoServicesSmb } from './pages/GeoServicesSmb';
 import { MicroApplications } from './pages/MicroApplications';
+import { MicroApplicationsSmb } from './pages/MicroApplicationsSmb';
+import { Industries } from './pages/Industries';
+import { DiscoverySprint } from './pages/DiscoverySprint';
+import { Contact } from './pages/Contact';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { OrveloLogo } from './components/OrveloLogo';
@@ -25,10 +30,10 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50 px-5 py-2 md:py-3 bg-slate-900/90 backdrop-blur-md border border-white/10 shadow-[0_10px_40px_rgba(15,23,42,0.15)] rounded-full flex justify-between items-center text-white">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50 px-5 py-1.5 md:py-2 bg-black border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-full flex justify-between items-center text-white">
       <div className="flex items-center gap-3">
         <Link to="/" className="flex items-center gap-2 group cursor-pointer pl-2">
-          <OrveloLogo theme="dark" className="h-9 w-auto" />
+          <OrveloLogo theme="dark" className="h-11 md:h-12 w-auto object-contain" />
         </Link>
       </div>
 
@@ -39,8 +44,8 @@ const Navbar = () => {
           onMouseEnter={() => setIsDropdownHovered(true)}
           onMouseLeave={() => setIsDropdownHovered(false)}
         >
-          <button className="hover:text-white flex items-center gap-1.5 transition-colors focus:outline-none">
-            What we do <ChevronDown className="w-3 h-3 opacity-60" />
+          <button className="hover:text-white flex items-center gap-1.5 transition-colors focus:outline-none uppercase">
+            WHAT WE DO <ChevronDown className="w-3 h-3 opacity-60" />
           </button>
           
           <AnimatePresence>
@@ -50,7 +55,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-slate-950/95 backdrop-blur-md border border-white/10 rounded-2xl p-2 shadow-2xl z-[100] text-center animate-none"
+                className="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-black/95 backdrop-blur-md border border-white/10 rounded-2xl p-2 shadow-2xl z-[100] text-center animate-none"
               >
                 <Link 
                   to="/#who" 
@@ -59,35 +64,38 @@ const Navbar = () => {
                   Overview
                 </Link>
                 <Link 
-                  to="/geo-services" 
+                  to="/geo-services-for-smbs" 
                   className="block px-4 py-2.5 hover:bg-white/5 rounded-xl text-slate-300 hover:text-white text-xs font-semibold uppercase tracking-wider text-center border-t border-white/5"
                 >
-                  GEO Services
+                  GEO (SMBs)
                 </Link>
                 <Link 
-                  to="/ai-micro-applications-for-manufacturing-companies" 
+                  to="/ai-micro-applications-for-smbs" 
                   className="block px-4 py-2.5 hover:bg-[#cb4b16]/10 rounded-xl text-slate-300 hover:text-white text-xs font-semibold uppercase tracking-wider text-center border-t border-white/5"
                 >
-                  AI Micro Applications
+                  AI Micro Apps (SMBs)
                 </Link>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        <Link to="/#where" className="hover:text-white transition-colors">Where hours go</Link>
-        <Link to="/#sprint" className="hover:text-white transition-colors">The Sprint</Link>
+        <Link to="/industries" className={`hover:text-white transition-colors ${location.pathname.startsWith('/industries') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Industries</Link>
+        <Link to="/the-discovery-sprint" className={`hover:text-white transition-colors ${location.pathname === '/the-discovery-sprint' ? 'text-[#cb4b16] font-extrabold' : ''}`}>The Sprint</Link>
         <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/case-studies" className={`hover:text-white transition-colors ${location.pathname.startsWith('/case-studies') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Case Studies</Link>
+        <Link to="/contact" className={`hover:text-white transition-colors ${location.pathname === '/contact' ? 'text-[#cb4b16] font-extrabold' : ''}`}>Contact</Link>
       </div>
 
       <div className="hidden md:block">
-        <button 
-          onClick={openModal}
-          className="px-5 py-2.5 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full transition-all font-bold active:scale-95 text-[10px] uppercase tracking-wider shadow-sm shadow-[#cb4b16]/10"
+        <a 
+          href="https://calendly.com/orvelo-info/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-5 py-2.5 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full transition-all font-bold active:scale-95 text-[10px] uppercase tracking-wider shadow-sm shadow-[#cb4b16]/10 text-center"
         >
           Book a fit call
-        </button>
+        </a>
       </div>
 
       {/* Mobile Toggle */}
@@ -107,27 +115,31 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            className="absolute top-16 left-0 right-0 bg-slate-900/95 backdrop-blur-md border border-white/10 rounded-3xl p-6 shadow-xl flex flex-col gap-4 text-center z-50 md:hidden text-white"
+            className="absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border border-white/10 rounded-3xl p-6 shadow-xl flex flex-col gap-4 text-center z-50 md:hidden text-white"
           >
             <div className="flex flex-col gap-2 py-1 border-b border-white/5">
-              <Link to="/#who" className="text-slate-300 hover:text-white py-1 font-semibold text-sm tracking-wide">What we do</Link>
-              <Link to="/geo-services" className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
-                └ GEO Services
+              <Link to="/#who" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1 font-semibold text-sm tracking-wide uppercase">What we do</Link>
+              <Link to="/geo-services-for-smbs" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
+                └ GEO (SMBs)
               </Link>
-              <Link to="/ai-micro-applications-for-manufacturing-companies" className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
-                └ AI Micro Applications
+              <Link to="/ai-micro-applications-for-smbs" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
+                └ AI Micro Apps (SMBs)
               </Link>
             </div>
-            <Link to="/#where" className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Where hours go</Link>
-            <Link to="/#sprint" className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">The Sprint</Link>
-            <Link to="/#leadership" className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Leadership</Link>
-            <Link to="/case-studies" className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Case Studies</Link>
-            <button 
-              onClick={() => { setIsOpen(false); openModal(); }}
-              className="mt-2 w-full py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider"
+            <Link to="/industries" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Industries</Link>
+            <Link to="/the-discovery-sprint" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">The Sprint</Link>
+            <Link to="/#leadership" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Leadership</Link>
+            <Link to="/case-studies" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Case Studies</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Contact Us</Link>
+            <a 
+              href="https://calendly.com/orvelo-info/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 w-full py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider text-center block"
             >
               Book a fit call
-            </button>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -175,8 +187,9 @@ const Footer = () => (
         © 2026 Orvelo Consulting Group. Precision in Motion.
       </div>
       <div className="flex gap-8 text-[11px] text-slate-400 uppercase tracking-widest font-bold">
+        <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
         <a href="#" className="hover:text-white transition-colors">Privacy</a>
-        <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+        <a href="https://www.linkedin.com/company/orvelo-ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
       </div>
     </div>
   </footer>
@@ -219,7 +232,12 @@ export default function App() {
               <Route path="/case-studies" element={<CaseStudiesPage />} />
               <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
               <Route path="/geo-services" element={<GeoServices />} />
+              <Route path="/geo-services-for-smbs" element={<GeoServicesSmb />} />
               <Route path="/ai-micro-applications-for-manufacturing-companies" element={<MicroApplications />} />
+              <Route path="/ai-micro-applications-for-smbs" element={<MicroApplicationsSmb />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/the-discovery-sprint" element={<DiscoverySprint />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
 

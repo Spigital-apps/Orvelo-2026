@@ -76,13 +76,15 @@ export const Home = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <button 
-                onClick={openModal}
+              <a 
+                href="https://calendly.com/orvelo-info/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold transition-all shadow-md active:scale-95 flex items-center justify-center gap-2.5 text-sm tracking-wider uppercase"
               >
                 Book a fit call
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
               <a 
                 href="#who"
                 className="w-full sm:w-auto px-8 py-4 bg-white/60 hover:bg-white text-slate-700 rounded-full font-bold border border-slate-200 transition-all flex items-center justify-center gap-2.5 text-sm"
@@ -97,15 +99,15 @@ export const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-16 w-full max-w-5xl rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-2xl relative bg-white group"
+            className="mt-16 w-full max-w-5xl rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-2xl relative bg-white group flex flex-col md:block"
           >
             <img 
-              src="/src/assets/images/orvelo_hero_1782349119217.jpg" 
+              src="/orvelopilot.png" 
               alt="Orvelo serenity cloud workspace illustration" 
-              className="w-full h-auto object-cover aspect-[16/9] md:aspect-[21/9] transition-transform duration-1000 group-hover:scale-[1.02]"
+              className="w-full h-auto object-cover aspect-[4/3] sm:aspect-video md:aspect-[21/9] transition-transform duration-1000 group-hover:scale-[1.02]"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 bg-white/95 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-slate-100 max-w-lg text-left shadow-xl">
+            <div className="relative md:absolute md:bottom-8 md:left-8 bg-white/95 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-slate-100 max-w-lg text-left shadow-xl m-4 md:m-0">
               <span className="text-[10px] uppercase font-bold tracking-widest text-[#cb4b16] block mb-2">The Orvelo Promise</span>
               <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 leading-snug">Fixed-price AI pilots for US small businesses. Scoped in writing before we start.</h3>
               <p className="text-xs md:text-sm text-slate-500 font-light">We take the risk out of adoption. No hourly consulting creep, no perpetual whiteboard audits. Just custom integrations built to hit a specific metric in weeks.</p>
@@ -176,12 +178,12 @@ export const Home = () => {
                   <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mb-1">Time to build</div>
                   <div className="text-lg font-bold text-slate-800">4-6 Weeks</div>
                 </div>
-                <button 
-                  onClick={openModal}
+                <Link 
+                  to="/the-discovery-sprint"
                   className="px-5 py-2.5 bg-slate-900 hover:bg-[#cb4b16] text-white font-bold rounded-full text-[10px] uppercase tracking-wider transition-colors flex items-center gap-1.5"
                 >
                   See details <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -586,20 +588,22 @@ export const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center relative z-10">
-            <button 
-              onClick={openModal}
-              className="w-full sm:w-auto px-10 py-5 bg-[#cb4b16] hover:bg-[#b33f11] text-white font-extrabold rounded-full transition-all flex items-center justify-center gap-3 shadow-md uppercase tracking-wider text-xs active:scale-95"
+            <a 
+              href="https://calendly.com/orvelo-info/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-10 py-5 bg-[#cb4b16] hover:bg-[#b33f11] text-white font-extrabold rounded-full transition-all flex items-center justify-center gap-3 shadow-md uppercase tracking-wider text-xs active:scale-95 text-center"
             >
               <Calendar className="w-4 h-4" />
               Book a Strategy Call
-            </button>
-            <button 
-              onClick={openModal}
-              className="w-full sm:w-auto px-10 py-5 bg-white hover:bg-slate-50 border border-slate-200 font-extrabold rounded-full transition-all flex items-center justify-center gap-3 text-slate-700 text-xs uppercase tracking-wider"
+            </a>
+            <Link 
+              to="/contact"
+              className="w-full sm:w-auto px-10 py-5 bg-white hover:bg-slate-50 border border-slate-200 font-extrabold rounded-full transition-all flex items-center justify-center gap-3 text-slate-700 text-xs uppercase tracking-wider text-center"
             >
               <MessageSquare className="w-4 h-4" />
               Start a Conversation
-            </button>
+            </Link>
           </div>
         </motion.div>
       </section>

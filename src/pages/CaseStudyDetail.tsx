@@ -171,12 +171,12 @@ export const CaseStudyDetail = () => {
               See other solutions <ChevronRight className="w-4 h-4" />
             </Link>
             
-            <button 
-              onClick={openModal}
-              className="px-10 py-5 bg-[#cb4b16] hover:bg-[#b33f11] text-white font-bold rounded-full transition-all shadow-md flex items-center gap-3 uppercase tracking-wider text-xs active:scale-95"
+            <Link 
+              to="/contact"
+              className="px-10 py-5 bg-[#cb4b16] hover:bg-[#b33f11] text-white font-bold rounded-full transition-all shadow-md flex items-center gap-3 uppercase tracking-wider text-xs active:scale-95 text-center"
             >
               Discuss your challenge
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>

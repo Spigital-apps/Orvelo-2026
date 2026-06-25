@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
 import { SEO } from '../components/SEO';
 import { SectionLabel } from '../components/SectionLabel';
@@ -226,12 +227,12 @@ export const GeoServices = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button 
-            onClick={openModal}
-            className="w-full sm:w-auto px-8 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-[#cb4b16]/10 hover:shadow-xl active:scale-95"
+          <Link 
+            to="/contact"
+            className="w-full sm:w-auto px-8 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-[#cb4b16]/10 hover:shadow-xl active:scale-95 text-center"
           >
             Get Your AI Search Visibility Audit
-          </button>
+          </Link>
         </div>
       </motion.div>
 
@@ -540,19 +541,19 @@ export const GeoServices = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button 
-            onClick={openModal}
-            className="w-full sm:w-auto px-8 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-[#cb4b16]/10"
+          <Link 
+            to="/contact"
+            className="w-full sm:w-auto px-8 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-[#cb4b16]/10 text-center"
           >
             Request a GEO Visibility Audit
-          </button>
+          </Link>
           
-          <button 
-            onClick={openModal}
-            className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-800 rounded-full font-bold text-xs uppercase tracking-widest border border-slate-200 transition-all duration-300"
+          <Link 
+            to="/contact"
+            className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-800 rounded-full font-bold text-xs uppercase tracking-widest border border-slate-200 transition-all duration-300 text-center"
           >
             Check If AI Recommends Your Company
-          </button>
+          </Link>
         </div>
       </section>
     </div>
