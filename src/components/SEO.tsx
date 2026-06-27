@@ -35,14 +35,23 @@ export const SEO = ({ title, description, image, url }: SEOProps) => {
     updateMeta('og:title', title, true);
     updateMeta('twitter:title', title);
     updateMeta('og:type', 'website', true);
+    updateMeta('og:site_name', 'Orvelo', true);
+    updateMeta('og:locale', 'en_US', true);
 
     if (image) {
       updateMeta('og:image', image, true);
+      updateMeta('og:image:secure_url', image, true);
       updateMeta('twitter:image', image);
     } else {
       // Default OG image if none provided
-      updateMeta('og:image', 'https://www.orvelo.ai/Orvelo.png', true);
-      updateMeta('twitter:image', 'https://www.orvelo.ai/Orvelo.png');
+      const defaultImage = 'https://www.orvelo.ai/Orvelo.png';
+      updateMeta('og:image', defaultImage, true);
+      updateMeta('og:image:secure_url', defaultImage, true);
+      updateMeta('og:image:type', 'image/png', true);
+      updateMeta('og:image:width', '1200', true);
+      updateMeta('og:image:height', '630', true);
+      updateMeta('og:image:alt', 'Orvelo - AI Consulting and Execution Partner for Growing Businesses', true);
+      updateMeta('twitter:image', defaultImage);
     }
 
     if (url) {
