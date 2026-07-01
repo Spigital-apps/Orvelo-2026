@@ -20,32 +20,60 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    countryCode: '+1',
     phone: '',
     companyName: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
     
-    // Simulate API submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        companyName: '',
-        message: ''
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "682f14ea-354d-4af0-919e-86c7566732ec",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone ? `${formData.countryCode} ${formData.phone}` : '',
+          companyName: formData.companyName,
+          message: formData.message
+        })
       });
-    }, 1200);
+      
+      const result = await response.json();
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          countryCode: '+1',
+          phone: '',
+          companyName: '',
+          message: ''
+        });
+      } else {
+        setSubmitError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError("Failed to submit form. Please check your network connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -141,7 +169,15 @@ export const Contact = () => {
                     Tell us about your project or business needs
                   </h3>
 
-                  <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                  <form 
+                    action="https://api.web3forms.com/submit" 
+                    method="POST" 
+                    onSubmit={handleSubmit} 
+                    className="space-y-6 relative z-10"
+                  >
+                    {/* Hidden Access Key for Web3Forms fallback/identification */}
+                    <input type="hidden" name="access_key" value="682f14ea-354d-4af0-919e-86c7566732ec" />
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-500">
@@ -191,19 +227,46 @@ export const Contact = () => {
                         <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-500">
                           Phone Number
                         </label>
-                        <div className="relative">
-                          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                            <Phone className="w-4 h-4" />
-                          </span>
-                          <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            placeholder="+1 (555) 000-0000"
-                            className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#cb4b16] focus:bg-white focus:outline-none rounded-2xl text-xs font-light text-slate-800 transition-all placeholder:text-slate-300"
-                          />
+                        <div className="flex gap-2">
+                          <div className="relative w-28 shrink-0">
+                            <select
+                              id="countryCode"
+                              name="countryCode"
+                              value={formData.countryCode}
+                              onChange={handleChange}
+                              className="w-full px-3 py-3 bg-slate-50 border border-slate-200 focus:border-[#cb4b16] focus:bg-white focus:outline-none rounded-2xl text-xs font-light text-slate-800 transition-all appearance-none cursor-pointer pr-8 h-[46px]"
+                            >
+                              <option value="+1">🇺🇸 +1</option>
+                              <option value="+44">🇬🇧 +44</option>
+                              <option value="+91">🇮🇳 +91</option>
+                              <option value="+61">🇦🇺 +61</option>
+                              <option value="+65">🇸🇬 +65</option>
+                              <option value="+971">🇦🇪 +971</option>
+                              <option value="+49">🇩🇪 +49</option>
+                              <option value="+33">🇫🇷 +33</option>
+                              <option value="+81">🇯🇵 +81</option>
+                              <option value="+86">🇨🇳 +86</option>
+                              <option value="+353">🇮🇪 +353</option>
+                              <option value="+64">🇳🇿 +64</option>
+                            </select>
+                            <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[8px] text-slate-400">
+                              ▼
+                            </span>
+                          </div>
+                          <div className="relative flex-1">
+                            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                              <Phone className="w-4 h-4" />
+                            </span>
+                            <input
+                              type="tel"
+                              id="phone"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              placeholder="(555) 000-0000"
+                              className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#cb4b16] focus:bg-white focus:outline-none rounded-2xl text-xs font-light text-slate-800 transition-all placeholder:text-slate-300 h-[46px]"
+                            />
+                          </div>
                         </div>
                       </div>
 
@@ -222,7 +285,7 @@ export const Contact = () => {
                             value={formData.companyName}
                             onChange={handleChange}
                             placeholder="Acme Inc."
-                            className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#cb4b16] focus:bg-white focus:outline-none rounded-2xl text-xs font-light text-slate-800 transition-all placeholder:text-slate-300"
+                            className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#cb4b16] focus:bg-white focus:outline-none rounded-2xl text-xs font-light text-slate-800 transition-all placeholder:text-slate-300 h-[46px]"
                           />
                         </div>
                       </div>
@@ -248,6 +311,12 @@ export const Contact = () => {
                         />
                       </div>
                     </div>
+
+                    {submitError && (
+                      <div className="p-4 bg-rose-50 border border-rose-100 text-rose-600 rounded-2xl text-xs font-medium">
+                        {submitError}
+                      </div>
+                    )}
 
                     <button
                       type="submit"
