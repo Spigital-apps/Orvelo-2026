@@ -8,6 +8,7 @@ import { GeoServices } from './pages/GeoServices';
 import { GeoServicesSmb } from './pages/GeoServicesSmb';
 import { MicroApplications } from './pages/MicroApplications';
 import { MicroApplicationsSmb } from './pages/MicroApplicationsSmb';
+import { BrandCitationOptimizationSmb } from './pages/BrandCitationOptimizationSmb';
 import { Industries } from './pages/Industries';
 import { DiscoverySprint } from './pages/DiscoverySprint';
 import { Contact } from './pages/Contact';
@@ -70,6 +71,12 @@ const Navbar = () => {
                   GEO (SMBs)
                 </Link>
                 <Link 
+                  to="/brand-citation-optimization" 
+                  className="block px-4 py-2.5 hover:bg-white/5 rounded-xl text-slate-300 hover:text-white text-xs font-semibold uppercase tracking-wider text-center border-t border-white/5"
+                >
+                  Brand Citation (SMBs)
+                </Link>
+                <Link 
                   to="/ai-micro-applications-for-smbs" 
                   className="block px-4 py-2.5 hover:bg-[#cb4b16]/10 rounded-xl text-slate-300 hover:text-white text-xs font-semibold uppercase tracking-wider text-center border-t border-white/5"
                 >
@@ -121,6 +128,9 @@ const Navbar = () => {
               <Link to="/#who" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1 font-semibold text-sm tracking-wide uppercase">What we do</Link>
               <Link to="/geo-services-for-smbs" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
                 └ GEO (SMBs)
+              </Link>
+              <Link to="/brand-citation-optimization" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
+                └ Brand Citation (SMBs)
               </Link>
               <Link to="/ai-micro-applications-for-smbs" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
                 └ AI Micro Apps (SMBs)
@@ -235,6 +245,7 @@ export default function App() {
               <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
               <Route path="/geo-services" element={<GeoServices />} />
               <Route path="/geo-services-for-smbs" element={<GeoServicesSmb />} />
+              <Route path="/brand-citation-optimization" element={<BrandCitationOptimizationSmb />} />
               <Route path="/ai-micro-applications-for-manufacturing-companies" element={<MicroApplications />} />
               <Route path="/ai-micro-applications-for-smbs" element={<MicroApplicationsSmb />} />
               <Route path="/industries" element={<Industries />} />

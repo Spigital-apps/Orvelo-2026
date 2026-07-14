@@ -5,9 +5,11 @@ interface SEOProps {
   description?: string;
   image?: string;
   url?: string;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
-export const SEO = ({ title, description, image, url }: SEOProps) => {
+export const SEO = ({ title, description, image, url, ogTitle, ogDescription }: SEOProps) => {
   useEffect(() => {
     document.title = title;
     
@@ -28,12 +30,15 @@ export const SEO = ({ title, description, image, url }: SEOProps) => {
 
     if (description) {
       updateMeta('description', description);
-      updateMeta('og:description', description, true);
-      updateMeta('twitter:description', description);
+      updateMeta('og:description', ogDescription || description, true);
+      updateMeta('twitter:description', ogDescription || description);
+    } else if (ogDescription) {
+      updateMeta('og:description', ogDescription, true);
+      updateMeta('twitter:description', ogDescription);
     }
 
-    updateMeta('og:title', title, true);
-    updateMeta('twitter:title', title);
+    updateMeta('og:title', ogTitle || title, true);
+    updateMeta('twitter:title', ogTitle || title);
     updateMeta('og:type', 'website', true);
     updateMeta('og:site_name', 'Orvelo', true);
     updateMeta('og:locale', 'en_US', true);
