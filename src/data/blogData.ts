@@ -1696,5 +1696,888 @@ The goal is not simply to be mentioned.
 The goal is to be mentioned for the right capabilities, by the right buyers, at the right stage of the buying process.
 
 That is how BCO can help manufacturers generate more qualified leads.`
+  },
+  {
+    id: "ai-quote-generator-for-manufacturing",
+    slug: "ai-quote-generator-for-manufacturing",
+    title: "AI Quote Generator for Manufacturing | Build Faster, More Profitable Quotes",
+    h1: "How an AI Quote Generator Can Help Manufacturers Build Faster, More Profitable Quotes",
+    excerpt: "Learn how an AI Quote Generator helps manufacturers analyse RFQs, calculate costs, capture estimator expertise, protect margins, and generate accurate quotes faster.",
+    publishedAt: "July 9, 2026",
+    readTime: "8 min read",
+    category: "Micro Apps",
+    author: {
+      name: "Orvelo Research Team",
+      role: "AI & Citation Strategy Advisors"
+    },
+    seo: {
+      title: "AI Quote Generator for Manufacturing | Build Faster, More Profitable Quotes",
+      description: "Learn how an AI Quote Generator helps manufacturers analyse RFQs, calculate costs, capture estimator expertise, protect margins, and generate accurate quotes faster.",
+      ogTitle: "How an AI Quote Generator Helps Manufacturers Build Better Quotes",
+      ogDescription: "Discover how manufacturers can use AI to analyse RFQs, apply expert costing logic, reduce quote turnaround time, and protect profitability."
+    },
+    tags: ["AI Quote Generator", "Manufacturing AI", "AI Micro Applications", "Quote Automation", "RFQ Automation", "RFP Management", "Manufacturing Cost Estimation", "Pricing Automation", "Industrial AI", "Manufacturing Software"],
+    content: `For many manufacturing companies, preparing a customer quote is not simply a matter of entering material costs and adding a margin.
+
+A reliable quote may require the estimator to review drawings, understand technical requirements, calculate material consumption, estimate machine time, account for labour, evaluate subcontracting requirements, consider delivery timelines, and assess commercial risk.
+
+This knowledge often sits with only a few experienced people in the organisation.
+
+When these experts are unavailable, quote preparation slows down. Less experienced employees may miss important cost components, rely on outdated assumptions, or produce quotes that are either too expensive to win or too low to remain profitable.
+
+An AI-powered Quote Generator can help manufacturers capture this expertise and make it available through a simple micro application.
+
+## Why Manufacturing Quotes Are Difficult to Prepare
+
+A manufacturing quote may depend on several interconnected factors, including:
+
+* Raw material type, grade, size, and current cost
+* Quantity and production volume
+* Machine setup and operating time
+* Labour requirements
+* Tooling and fixture costs
+* Surface treatment or finishing
+* Quality inspection requirements
+* Packaging and logistics
+* Subcontracting costs
+* Delivery commitments
+* Customer-specific pricing terms
+* Expected margins and risk buffers
+
+An experienced estimator may evaluate many of these factors almost instinctively. They know which questions to ask, which costs are frequently overlooked, and where additional allowances may be required.
+
+However, this creates a dependency on individuals.
+
+As enquiry volumes grow, the quoting team can become a bottleneck. Sales teams may wait several days for an estimate, while experienced engineers spend valuable time repeatedly working through similar calculations.
+
+## Why the Right Quote Matters
+
+A quote influences more than whether a company wins an order.
+
+It directly affects profitability, production planning, capacity allocation, customer expectations, and delivery performance.
+
+A quote that is too high may cause the manufacturer to lose a good opportunity. A quote that is too low may win the order but reduce margins or even create a loss.
+
+The challenge is not simply to quote quickly. It is to quote quickly while maintaining consistency, accuracy, and commercial control.
+
+This is where an AI Quote Generator can make a significant difference.
+
+## What Is An AI Quote Generator?
+
+An AI Quote Generator is a focused micro application that helps a manufacturer evaluate an enquiry, identify the required cost parameters, and prepare a recommended quotation.
+
+The application can accept information from sources such as:
+
+* Request for Proposal documents
+* Request for Quotation documents
+* Bills of materials
+* Technical specifications
+* Engineering drawings
+* Customer emails
+* Previous quotations
+* Material price lists
+* Machine-hour rate sheets
+* Labour cost tables
+* Vendor and subcontractor pricing
+* Customer-specific commercial terms
+
+The AI analyses the available information, extracts relevant requirements, identifies missing inputs, and applies the manufacturer’s approved costing logic.
+
+It can then generate a structured quote for review by the sales, engineering, or estimating team.
+
+The objective is not necessarily to remove human approval. It is to help employees prepare a stronger first draft using the organisation’s accumulated knowledge.
+
+## How the Quote Generator Works
+
+The exact workflow depends on the manufacturer’s processes, but a typical AI Quote Generator may follow six stages.
+
+### 1. Enquiry Upload
+
+The user uploads the customer’s RFQ, RFP, drawing, specification, or bill of materials.
+
+The application can also allow employees to enter requirements through a guided form when formal documents are unavailable.
+
+### 2. Requirement Extraction
+
+The AI reads the submitted documents and extracts important information such as:
+
+* Product or component description
+* Required quantity
+* Materials and grades
+* Dimensions and tolerances
+* Manufacturing processes
+* Testing and inspection requirements
+* Finishing specifications
+* Delivery dates
+* Packaging requirements
+* Commercial conditions
+
+This reduces the need for employees to manually search through long documents.
+
+### 3. Missing Information Identification
+
+The application checks whether all necessary costing inputs are available.
+
+For example, it may identify that the customer has not specified the required surface finish, inspection standard, packaging method, or delivery location.
+
+It can then generate a list of clarification questions before the quote is finalised.
+
+### 4. Cost Calculation
+
+The application references approved internal data sources such as:
+
+* Material rates
+* Machine-hour costs
+* Labour rates
+* Standard setup times
+* Scrap percentages
+* Tooling costs
+* Vendor rates
+* Freight estimates
+* Margin rules
+
+It can also retrieve information from previous quotations for similar products or customers.
+
+Based on this data, the system prepares a detailed cost estimate.
+
+### 5. Risk and Margin Review
+
+The AI can highlight areas that may affect profitability, including:
+
+* Unusually tight tolerances
+* Short delivery timelines
+* High material price volatility
+* New or untested processes
+* Dependence on external vendors
+* Low order quantities
+* Special inspection requirements
+* Differences from previous similar jobs
+
+The application can recommend an appropriate contingency or margin based on predefined business rules.
+
+### 6. Quote Generation
+
+The final output may include:
+
+* Customer and enquiry details
+* Product description
+* Quantity-based pricing
+* Cost breakdown
+* Recommended selling price
+* Gross margin estimate
+* Delivery timeline
+* Payment terms
+* Assumptions
+* Exclusions
+* Validity period
+* Internal approval notes
+
+The quote can then be reviewed, edited, approved, and exported into the manufacturer’s standard quotation format.
+
+## Capturing the Knowledge of Experienced Estimators
+
+One of the most valuable benefits of an AI Quote Generator is its ability to capture knowledge that currently exists only in the minds of experienced employees.
+
+During development, the application can be trained around the way senior estimators evaluate opportunities.
+
+This includes understanding:
+
+* Which inputs they check first
+* Which hidden costs they usually consider
+* How they estimate setup and production time
+* How they treat different order quantities
+* Which customers require special commercial conditions
+* Where they include risk allowances
+* Why they reject or revise certain enquiries
+* How they determine the final margin
+
+This experience can then be converted into structured rules, reference tables, guided questions, and AI instructions.
+
+The result is a system that allows more employees to work with the organisation’s established quoting practices.
+
+## How We Build an AI Quote Generator for Manufacturers
+
+At Orvelo, we do not begin by immediately developing the application.
+
+We first study how quotations are currently prepared.
+
+### Step 1: Understand the Existing Quoting Process
+
+We work with sales, engineering, production, procurement, and finance teams to understand the complete quotation workflow.
+
+We identify:
+
+* The information received from customers
+* The people involved in preparing a quote
+* The calculations currently used
+* The files and systems being referenced
+* The approval process
+* Common delays
+* Common costing errors
+* Knowledge that depends on specific employees
+
+### Step 2: Map the Quoting Logic
+
+We document the parameters that influence the final price.
+
+This may include formulas, costing tables, margin rules, customer categories, quantity breaks, material allowances, production rates, and approval thresholds.
+
+We also identify areas where human judgement must remain part of the process.
+
+### Step 3: Organise the Required Data
+
+An AI application is only as dependable as the information it can access.
+
+We help organise the relevant data, which may be stored in spreadsheets, ERP systems, accounting software, shared folders, previous quotations, or employee-maintained documents.
+
+The initial version does not always require a complex system integration. A focused micro application can begin with approved spreadsheets, rate cards, templates, and historical quotation data.
+
+### Step 4: Build the Micro Application
+
+We develop a simple, purpose-built interface through which employees can upload enquiry documents or enter requirements.
+
+The application is configured to:
+
+* Read and summarise enquiry documents
+* Extract costing parameters
+* Ask for missing information
+* Retrieve approved rates
+* Apply calculation rules
+* Compare similar historical quotes
+* Flag commercial risks
+* Recommend a price and margin
+* Generate the quotation document
+
+### Step 5: Validate It With Experienced Employees
+
+Senior estimators and business leaders review the outputs produced by the application.
+
+The calculations, assumptions, prompts, and recommendations are refined until the system reflects the organisation’s actual quoting standards.
+
+### Step 6: Introduce Approval and Governance
+
+The application can include approval levels based on quote value, margin, customer type, delivery risk, or unusual commercial terms.
+
+Every generated quote can retain a record of:
+
+* Source documents
+* Extracted information
+* Cost inputs
+* Applied assumptions
+* Recommended price
+* Employee changes
+* Final approval
+
+This creates greater visibility and accountability around quotation decisions.
+
+## Benefits of an AI Quote Generator
+
+### Faster Quote Turnaround
+
+The application reduces the time spent reading documents, collecting rates, repeating calculations, and formatting quotation documents.
+
+This helps sales teams respond to enquiries faster.
+
+### Greater Pricing Consistency
+
+Standard costing logic and margin rules can be applied across teams, locations, and employees.
+
+This reduces variation caused by individual methods.
+
+### Reduced Dependency on Key Employees
+
+The expertise of senior estimators becomes available through the application, allowing other employees to prepare stronger initial quotations.
+
+### Better Margin Protection
+
+The system can identify missing costs, commercial risks, low-margin opportunities, and unusual requirements before the quote is submitted.
+
+### Improved Knowledge Retention
+
+Quoting knowledge remains within the organisation even when experienced employees retire, leave, or move into different roles.
+
+### Easier Training
+
+New sales and estimating employees can use the guided workflow to understand which parameters must be considered while preparing a quote.
+
+### More Opportunities Evaluated
+
+When quotation preparation becomes faster, manufacturers can respond to more relevant enquiries without placing excessive pressure on senior employees.
+
+## A Micro Application, Not a Large Transformation Project
+
+An AI Quote Generator does not need to begin as a large ERP implementation or an organisation-wide digital transformation programme.
+
+It can be developed as a focused micro application that solves one clearly defined business problem.
+
+The first version may support a specific product category, customer segment, plant, or quotation type.
+
+Once the results are validated, additional capabilities can be introduced, such as:
+
+* ERP integration
+* CRM integration
+* Live material price updates
+* Supplier quotation comparison
+* Capacity-based delivery estimates
+* Automated approval workflows
+* Quote follow-up reminders
+* Win-loss analysis
+* Actual cost versus quoted cost comparison
+
+This phased approach makes the application easier to develop, test, adopt, and improve.
+
+## The Role of the Estimator Is Still Important
+
+An AI Quote Generator should not be treated as an unquestionable pricing engine.
+
+Manufacturing enquiries can involve unique technical, operational, and commercial conditions that require experienced judgement.
+
+The application works best as a decision-support tool.
+
+It performs the repetitive analysis, retrieves relevant information, applies approved calculations, and prepares a structured recommendation. The estimator then reviews the output and makes the final decision.
+
+This combination of AI assistance and human expertise can improve both speed and reliability.
+
+## Build Quotes With the Knowledge of Your Best People
+
+Manufacturers often possess years of valuable quoting knowledge, but much of it remains scattered across spreadsheets, documents, previous proposals, and the experience of a few employees.
+
+An AI Quote Generator can bring this knowledge together in a simple application that helps teams prepare quotes faster, apply costing standards consistently, and protect profitability.
+
+At Orvelo, we help manufacturers identify the quoting logic, organise the required data, build the application, and introduce it into the existing workflow.
+
+The result is not a generic AI tool. It is a focused manufacturing micro application built around the way your organisation evaluates and prices opportunities.
+
+**Build an AI Quote Generator for your manufacturing business. Speak to Orvelo about starting with a focused Discovery Sprint.**`
+  },
+  {
+    id: "ai-sales-enquiry-responder",
+    slug: "ai-sales-enquiry-responder-for-manufacturing",
+    title: "AI Sales Enquiry Responder for Manufacturing | Orvelo",
+    h1: "How an AI Sales Enquiry Responder Can Turn Incomplete Leads Into Quote-Ready Opportunities",
+    excerpt: "Learn how an AI Sales Enquiry Responder helps manufacturers automatically analyze incoming enquiries, request missing details, and qualify leads into structured, quote-ready RFQs.",
+    publishedAt: "July 16, 2026",
+    readTime: "8 min read",
+    category: "Micro Apps",
+    author: {
+      name: "Orvelo Research Team",
+      role: "AI & Citation Strategy Advisors"
+    },
+    seo: {
+      title: "AI Sales Enquiry Responder for Manufacturing | Orvelo",
+      description: "Learn how an AI Sales Enquiry Responder helps manufacturers automatically analyze incoming enquiries, request missing details, and qualify leads into structured, quote-ready RFQs.",
+      ogTitle: "How an AI Sales Enquiry Responder Turns Incomplete Leads Into Opportunities",
+      ogDescription: "Discover how manufacturers can automate initial lead triage, extract technical requirements, and streamline RFQ collection."
+    },
+    tags: ["AI Sales Enquiry Responder", "Sales Automation", "Lead Qualification", "RFQ Automation", "Manufacturing Sales", "AI Micro Applications"],
+    content: `Manufacturing companies receive sales enquiries through many different channels.
+
+A prospect may submit a website form, send a short email, share a drawing through WhatsApp, or simply ask for a price without providing enough technical or commercial information.
+
+The enquiry may look promising, but the sales team cannot prepare a reliable quote because important details are missing.
+
+They may need to know the required quantity, material grade, dimensions, tolerances, delivery location, expected timeline, quality requirements, or supporting documents.
+
+The sales team must then send multiple follow-up emails, wait for responses, collect attachments, and manually organise the information before the enquiry can move to the estimating team.
+
+An AI Sales Enquiry Responder can automate much of this process.
+
+It can review the initial enquiry, identify what information is missing, respond to the prospect, and provide a structured RFP or RFQ form to collect the required details.
+
+Once the information is complete, the system can pass it to an AI Quote Generator to create a quotation and proposal document.
+
+## The Problem With Incomplete Sales Enquiries
+
+A large number of manufacturing enquiries arrive without the information required for technical evaluation or cost estimation.
+
+A prospect may send a message such as:
+
+“Please send your best price for 500 units.”
+
+However, the message may not include:
+
+* Product specifications
+* Material type or grade
+* Dimensions
+* Drawings
+* Tolerance requirements
+* Surface finish
+* Testing requirements
+* Delivery location
+* Required delivery date
+* Packaging expectations
+* Commercial terms
+
+Without these details, the sales team cannot determine whether the requirement is technically feasible or commercially attractive.
+
+An employee must contact the prospect, explain what information is needed, and continue following up until the enquiry is complete.
+
+When enquiry volumes are high, this process becomes difficult to manage.
+
+Some prospects respond immediately. Others reply with only part of the information. Some attach documents without explaining them. Others stop responding completely.
+
+The result is a slow and inconsistent sales qualification process.
+
+## Why Slow Enquiry Response Can Cost Manufacturers Business
+
+Prospects often contact several suppliers at the same time.
+
+The manufacturer that responds quickly and professionally may have an advantage, even before pricing begins.
+
+A delayed response can create several problems:
+
+* The prospect may move to another supplier
+* The enquiry may remain unattended in an inbox
+* Important technical details may be misunderstood
+* Sales employees may forget to follow up
+* Estimators may receive incomplete information
+* Quote preparation may take longer
+* Sales and engineering teams may repeat the same questions
+
+The initial response is therefore an important part of the sales process.
+
+It should acknowledge the enquiry, show that the requirement is being reviewed, and clearly guide the prospect towards providing the information needed for the next step.
+
+## What Is an AI Sales Enquiry Responder?
+
+An AI Sales Enquiry Responder is a focused micro application that receives, reads, qualifies, and responds to incoming sales enquiries.
+
+It can connect to channels such as:
+
+* Website enquiry forms
+* Sales email inboxes
+* CRM systems
+* WhatsApp enquiry workflows
+* Distributor portals
+* Customer service platforms
+* Online product enquiry forms
+
+When a new enquiry arrives, the system analyses the message and any attached documents.
+
+It identifies the product, service, or project being requested and checks whether the enquiry contains the information required to prepare a quote.
+
+When information is missing, the application can automatically send a personalised response to the prospect.
+
+The response may include specific questions or a link to a structured RFP, RFQ, or project requirement form.
+
+## How the System Works
+
+A typical AI Sales Enquiry Responder may follow the workflow below.
+
+### 1. Capture the Sales Enquiry
+
+The system receives a new enquiry from a connected channel.
+
+This could be a short email, a website form submission, a CRM lead, or a message containing technical attachments.
+
+The application records details such as:
+
+* Prospect name
+* Company name
+* Contact information
+* Product or service requested
+* Source of the enquiry
+* Message content
+* Attached documents
+* Date and time received
+
+### 2. Analyse the Enquiry
+
+The AI reviews the enquiry and identifies the available information.
+
+It may extract:
+
+* Product name
+* Part number
+* Required quantity
+* Material
+* Dimensions
+* Project type
+* Delivery expectation
+* Application or use case
+* Technical specifications
+* Uploaded drawings or documents
+
+It then compares the available information against the manufacturer’s approved enquiry checklist.
+
+### 3. Identify Missing Details
+
+The application determines which details are required before the opportunity can move to quotation.
+
+For example, it may identify that the prospect has provided a drawing and quantity but has not mentioned:
+
+* Material grade
+* Surface treatment
+* Inspection requirement
+* Delivery location
+* Expected delivery date
+
+Instead of sending a generic response, the system can ask only for the specific information that is missing.
+
+### 4. Send an Automated, Personalised Response
+
+The AI can prepare and send an email acknowledging the enquiry.
+
+The response can:
+
+* Thank the prospect for contacting the company
+* Refer to the requested product or requirement
+* Confirm that the enquiry is being reviewed
+* List the missing information
+* Provide a link to the structured requirement form
+* Explain what happens after submission
+* Share the expected next step
+
+The message can be written in the manufacturer’s preferred sales tone and sent from the appropriate sales representative or department.
+
+### 5. Collect Information Through a Structured Form
+
+The prospect receives a link to a standard RFP, RFQ, or sales requirement form.
+
+The form can be customised based on the type of enquiry.
+
+For example, a component manufacturing enquiry may ask for:
+
+* Part name and description
+* Annual and immediate quantity
+* Drawing upload
+* Material and grade
+* Dimensions
+* Tolerances
+* Manufacturing process
+* Surface finish
+* Inspection requirements
+* Certifications
+* Delivery location
+* Required delivery date
+* Target price, when applicable
+
+An industrial equipment enquiry may ask different questions relating to capacity, operating conditions, installation, integration, utilities, and site requirements.
+
+The form can use conditional fields so that prospects see only the questions relevant to their requirement.
+
+### 6. Review and Organise the Submitted Information
+
+Once the prospect completes the form, the application combines the new information with the original enquiry.
+
+It can organise the content into a structured internal summary containing:
+
+* Prospect details
+* Requirement summary
+* Technical inputs
+* Commercial inputs
+* Uploaded documents
+* Missing information
+* Clarification notes
+* Recommended next action
+
+This summary can be shared with the sales, engineering, estimating, or production team.
+
+### 7. Send the Enquiry to the AI Quote Generator
+
+When all required details are available, the enquiry can be automatically transferred to the AI Quote Generator.
+
+The Quote Generator can then:
+
+* Read the completed RFP or RFQ
+* Analyse technical requirements
+* Retrieve material and labour rates
+* Estimate machine and production time
+* Apply approved costing logic
+* Review historical quotations
+* Calculate margins
+* Flag risks and assumptions
+* Recommend a selling price
+
+This creates a connected workflow from the first enquiry to the initial quotation.
+
+### 8. Generate the Proposal Document
+
+The system can also create a professional proposal document based on the completed enquiry and approved quotation.
+
+The proposal may include:
+
+* Cover page
+* Customer requirement summary
+* Proposed product or solution
+* Scope of supply
+* Technical specifications
+* Quantity and pricing
+* Delivery schedule
+* Payment terms
+* Assumptions
+* Exclusions
+* Warranty
+* Quote validity
+* Company credentials
+* Contact details
+
+The sales team can review and approve the proposal before it is sent to the prospect.
+
+## From Enquiry to Proposal Through One Connected Workflow
+
+The real value of the system comes from connecting multiple focused micro applications.
+
+The complete workflow can operate as follows:
+
+**Sales enquiry received**
+
+The prospect sends an email, submits a website form, or contacts the sales team.
+
+**Enquiry analysed**
+
+The AI identifies the requirement and checks whether enough information is available.
+
+**Automatic response sent**
+
+The prospect receives an acknowledgement and a request for the missing details.
+
+**Structured RFP or RFQ completed**
+
+The prospect submits the technical, commercial, and delivery information through a guided form.
+
+**Enquiry qualified**
+
+The system checks whether the opportunity is relevant, complete, and ready for estimation.
+
+**Quote generated**
+
+The collected information is passed to the AI Quote Generator.
+
+**Proposal prepared**
+
+The system combines the technical response and approved pricing into a proposal document.
+
+**Human approval completed**
+
+The sales or estimating team reviews the output before sending it to the prospect.
+
+This workflow reduces manual coordination between sales, engineering, estimation, and proposal teams.
+
+## How the RFP Form Can Be Customised
+
+A single generic form may not be suitable for every manufacturing enquiry.
+
+The form should be designed around the products, services, and industries served by the manufacturer.
+
+Different forms can be created for:
+
+* Custom component manufacturing
+* Fabrication projects
+* Industrial machinery
+* Pumps and valves
+* Electrical panels
+* Automation systems
+* HVAC equipment
+* Maintenance contracts
+* Engineering services
+* Spare parts
+* Contract manufacturing
+* OEM partnerships
+
+The system can first identify the enquiry category and then send the appropriate form.
+
+This prevents prospects from receiving a long, irrelevant questionnaire.
+
+## Qualifying Enquiries Before Estimation
+
+Not every enquiry should immediately be sent to the estimating team.
+
+The AI Sales Enquiry Responder can apply basic qualification rules before internal resources are allocated.
+
+The system may evaluate factors such as:
+
+* Product or service fit
+* Order quantity
+* Customer location
+* Delivery expectations
+* Available certifications
+* Technical feasibility
+* Project value
+* Industry served
+* Required production process
+* Minimum order requirements
+
+Based on these rules, the application can classify the enquiry as:
+
+* Ready for quotation
+* Requires clarification
+* Requires technical review
+* Requires sales follow-up
+* Outside the company’s scope
+* Low priority
+* High-value opportunity
+
+This helps sales teams focus on the opportunities that are more likely to progress.
+
+## How We Build an AI Sales Enquiry Responder
+
+At Orvelo, we build the application around the manufacturer’s existing sales process.
+
+### Step 1: Review Existing Enquiry Channels
+
+We identify where enquiries currently arrive and how they are handled.
+
+This may include sales inboxes, website forms, CRM systems, WhatsApp, distributor emails, and marketplace platforms.
+
+We study:
+
+* Common types of enquiries
+* Information usually provided
+* Information frequently missing
+* Typical response time
+* Current follow-up process
+* Teams involved
+* Common reasons for delay
+
+### Step 2: Define the Required Information
+
+We work with sales, engineering, estimation, and production teams to define the minimum information needed for each type of enquiry.
+
+This becomes the foundation for:
+
+* Enquiry checklists
+* Qualification rules
+* Automated questions
+* RFP and RFQ forms
+* Internal handover summaries
+
+### Step 3: Design the Response Workflow
+
+We define how the system should respond under different conditions.
+
+For example:
+
+* Complete enquiry: acknowledge and send for estimation
+* Partially complete enquiry: ask only for missing details
+* Unclear enquiry: send a guided requirement form
+* Enquiry outside scope: send a professional response
+* Strategic opportunity: alert a senior sales employee
+* Existing customer enquiry: retrieve available account information
+
+### Step 4: Build the Dynamic RFP or RFQ Form
+
+We create a structured form that adapts to the type of product or project.
+
+The form can support:
+
+* Conditional questions
+* File uploads
+* Drawing uploads
+* Product selection
+* Quantity tables
+* Multiple line items
+* Technical specifications
+* Delivery information
+* Commercial requirements
+
+### Step 5: Connect the Quote and Proposal Applications
+
+Once the enquiry is complete, the submitted data can be transferred directly to the AI Quote Generator and Proposal Generator.
+
+This reduces duplicate data entry and prevents important details from being lost during internal handovers.
+
+### Step 6: Introduce Human Review and Approval
+
+The sales team remains in control of important customer communication.
+
+Depending on the manufacturer’s preference, the system can:
+
+* Send responses automatically
+* Prepare draft responses for approval
+* Automatically handle only selected enquiry types
+* Escalate strategic opportunities
+* Require approval before sending a quote or proposal
+
+### Step 7: Track Performance
+
+The application can maintain a record of:
+
+* Enquiries received
+* Response time
+* Forms sent
+* Forms completed
+* Missing information
+* Qualified opportunities
+* Quotes generated
+* Proposals sent
+* Enquiries that did not progress
+
+This helps the manufacturer improve both lead quality and sales efficiency.
+
+## Benefits of an AI Sales Enquiry Responder
+
+### Faster Initial Response
+
+Prospects receive a professional acknowledgement without waiting for a sales employee to manually review every message.
+
+### Better Information Collection
+
+The system collects technical and commercial details through a structured process.
+
+### Reduced Email Follow-Ups
+
+Instead of multiple unstructured emails, the prospect receives a clear checklist or guided form.
+
+### Improved Quote Quality
+
+Estimators receive more complete information, reducing assumptions and pricing errors.
+
+### Shorter Sales Cycle
+
+The time between initial enquiry, technical clarification, quotation, and proposal preparation can be reduced.
+
+### Better Use of Experienced Employees
+
+Sales engineers and estimators spend less time requesting basic information and more time evaluating serious opportunities.
+
+### Consistent Customer Experience
+
+Every prospect receives a clear, professional, and timely response.
+
+### Fewer Lost Enquiries
+
+The system can track incomplete submissions and remind the prospect or assigned salesperson to follow up.
+
+### Connected Sales Workflow
+
+Information collected at the enquiry stage flows directly into quoting and proposal generation.
+
+## A Practical Micro Application for Manufacturing Sales Teams
+
+An AI Sales Enquiry Responder does not need to replace the manufacturer’s CRM, ERP, or sales team.
+
+It can operate as a focused micro application that connects the first stage of the sales process with quotation and proposal preparation.
+
+The initial version can begin with one sales inbox, one product category, and one enquiry form.
+
+Once the workflow is validated, it can be expanded across additional teams, products, locations, and enquiry channels.
+
+Future capabilities may include:
+
+* CRM integration
+* Automated lead scoring
+* Multilingual responses
+* Follow-up reminders
+* Distributor enquiry management
+* Customer account lookup
+* Similar enquiry comparison
+* Salesperson assignment
+* Quote status tracking
+* Proposal follow-up emails
+
+## Turn Every Enquiry Into a Structured Sales Opportunity
+
+Manufacturing sales teams should not have to spend hours collecting basic information before an opportunity can be evaluated.
+
+An AI Sales Enquiry Responder can automatically review incoming enquiries, identify missing details, communicate with prospects, and collect requirements through a structured RFP or RFQ form.
+
+The completed information can then flow into an AI Quote Generator and Proposal Generator, creating a connected process from enquiry to customer-ready proposal.
+
+At Orvelo, we help manufacturers map the sales workflow, define the information required, build the enquiry response system, create the RFP forms, and connect the application with quotation and proposal generation.
+
+The result is a practical AI micro application that helps manufacturers respond faster, qualify opportunities more effectively, and prepare quotes with better information.
+
+**Build an AI Sales Enquiry Responder for your manufacturing business. Speak to Orvelo about starting with a focused Discovery Sprint.**`
   }
 ];

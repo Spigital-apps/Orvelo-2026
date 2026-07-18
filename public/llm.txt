@@ -45,6 +45,8 @@ A rigorous 1-to-2 week methodology to map problems, build proof-of-concept proto
   * **First Article (`/blog/what-is-bco-brand-citation-optimization`)**: Comprehensive strategic explanation of BCO, defining brand citations, highlighting its importance, explaining how it differs from SEO/GEO, and mapping BCO performance factors.
   * **Second Article (`/blog/how-bco-changes-your-ai-brand-narrative`)**: Exploration of what AI search engines say about your brand, 5 common patterns of AI brand descriptions, and how BCO systematically shapes and corrects this narrative.
   * **Third Article (`/blog/bco-for-manufacturing-qualified-leads`)**: Demonstration of how BCO helps manufacturers improve AI visibility, attract high-intent buyers, construct specialized positions, and generate more qualified RFQs.
+  * **Fourth Article (`/blog/ai-quote-generator-for-manufacturing`)**: Explanation of how an AI Quote Generator operates as a high-value micro-application, capturing estimator knowledge to build faster, more profitable manufacturing quotes.
+  * **Fifth Article (`/blog/ai-sales-enquiry-responder-for-manufacturing`)**: Overview of the AI Sales Enquiry Responder, demonstrating how it receives incomplete incoming inquiries and automatically requests missing details to build quote-ready RFQs.
 * **Contact (`/contact`)**: Form and inquiry portals to engage our advisors.
 
 ---
