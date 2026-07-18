@@ -12,6 +12,8 @@ import { BrandCitationOptimizationSmb } from './pages/BrandCitationOptimizationS
 import { Industries } from './pages/Industries';
 import { DiscoverySprint } from './pages/DiscoverySprint';
 import { Contact } from './pages/Contact';
+import { BlogList } from './pages/BlogList';
+import { BlogPostDetail } from './pages/BlogPostDetail';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { OrveloLogo } from './components/OrveloLogo';
@@ -89,7 +91,7 @@ const Navbar = () => {
 
         <Link to="/industries" className={`hover:text-white transition-colors ${location.pathname.startsWith('/industries') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Industries</Link>
         <Link to="/the-discovery-sprint" className={`hover:text-white transition-colors ${location.pathname === '/the-discovery-sprint' ? 'text-[#cb4b16] font-extrabold' : ''}`}>The Sprint</Link>
-        <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
+        <Link to="/blog" className={`hover:text-white transition-colors ${location.pathname.startsWith('/blog') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Insights</Link>
         <Link to="/case-studies" className={`hover:text-white transition-colors ${location.pathname.startsWith('/case-studies') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Case Studies</Link>
         <Link to="/contact" className={`hover:text-white transition-colors ${location.pathname === '/contact' ? 'text-[#cb4b16] font-extrabold' : ''}`}>Contact</Link>
       </div>
@@ -138,7 +140,7 @@ const Navbar = () => {
             </div>
             <Link to="/industries" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Industries</Link>
             <Link to="/the-discovery-sprint" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">The Sprint</Link>
-            <Link to="/#leadership" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Leadership</Link>
+            <Link to="/blog" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Insights</Link>
             <Link to="/case-studies" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Case Studies</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Contact Us</Link>
             <a 
@@ -199,6 +201,8 @@ const Footer = () => (
         © 2026 Orvelo Consulting Group. Precision in Motion.
       </div>
       <div className="flex gap-8 text-[11px] text-slate-400 uppercase tracking-widest font-bold">
+        <Link to="/blog" className="hover:text-white transition-colors">Insights</Link>
+        <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
         <a href="#" className="hover:text-white transition-colors">Privacy</a>
         <a href="https://www.linkedin.com/company/orvelo-ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
@@ -232,7 +236,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ModalProvider>
-        <div className="relative font-sans selection:bg-brand-teal/20 overflow-x-hidden min-h-screen flex flex-col bg-[#F4F7FB] text-slate-900">
+        <div className="relative font-sans selection:bg-brand-teal/20 overflow-x-clip min-h-screen flex flex-col bg-[#F4F7FB] text-slate-900">
           <ScrollToAnchor />
           <ScrollToTop />
           <Navbar />
@@ -250,6 +254,8 @@ export default function App() {
               <Route path="/ai-micro-applications-for-smbs" element={<MicroApplicationsSmb />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/the-discovery-sprint" element={<DiscoverySprint />} />
+              <Route path="/blog" element={<BlogList />} />
+              <Route path="/blog/:slug" element={<BlogPostDetail />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>

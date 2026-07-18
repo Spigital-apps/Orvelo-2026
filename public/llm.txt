@@ -41,6 +41,10 @@ A rigorous 1-to-2 week methodology to map problems, build proof-of-concept proto
 * **AI Micro-Applications (SMBs) (`/ai-micro-applications-for-smbs`)**: Cost-effective workflow automations and customer pipelines for small business scale.
 * **Industries (`/industries`)**: Targeted overviews for retail, manufacturing, SaaS, and professional services.
 * **The Discovery Sprint (`/the-discovery-sprint`)**: Details of our signature agile technical strategy blueprint.
+* **Insights & Articles (`/blog`)**: Our library of high-level advisory insights on GEO, BCO, and AI applications.
+  * **First Article (`/blog/what-is-bco-brand-citation-optimization`)**: Comprehensive strategic explanation of BCO, defining brand citations, highlighting its importance, explaining how it differs from SEO/GEO, and mapping BCO performance factors.
+  * **Second Article (`/blog/how-bco-changes-your-ai-brand-narrative`)**: Exploration of what AI search engines say about your brand, 5 common patterns of AI brand descriptions, and how BCO systematically shapes and corrects this narrative.
+  * **Third Article (`/blog/bco-for-manufacturing-qualified-leads`)**: Demonstration of how BCO helps manufacturers improve AI visibility, attract high-intent buyers, construct specialized positions, and generate more qualified RFQs.
 * **Contact (`/contact`)**: Form and inquiry portals to engage our advisors.
 
 ---

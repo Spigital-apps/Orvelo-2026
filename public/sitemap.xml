@@ -60,6 +60,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Insights / Blog -->
+  <url>
+    <loc>https://www.orvelo.ai/blog</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.orvelo.ai/blog/what-is-bco-brand-citation-optimization</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.orvelo.ai/blog/how-bco-changes-your-ai-brand-narrative</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.orvelo.ai/blog/bco-for-manufacturing-qualified-leads</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Case Studies -->
   <url>
     <loc>https://www.orvelo.ai/case-studies/after-sales-parts-ai-inspection</loc>
