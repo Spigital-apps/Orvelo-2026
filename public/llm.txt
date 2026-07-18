@@ -1,0 +1,51 @@
+# Orvelo — Strategy and Execution
+
+Orvelo is a strategic advisory and technical execution consultancy. We bridge the gap between business objectives, complex operations, and modern AI/digital capability. 
+
+This document serves as an AI-friendly guide to Orvelo's services, focus areas, and digital resources.
+
+## Core Capabilities & Services
+
+### 1. Generative Engine Optimization (GEO)
+As traditional search shifts to AI-generated answers, GEO helps businesses optimize their digital presence to be recognized, summarized, and cited by AI models (ChatGPT, Gemini, Perplexity, Copilot).
+* **Enterprise GEO**: Custom visibility strategies, AI citation audits, structured content engineering, and trust-signal mapping for large corporations and complex industries.
+* **GEO for SMBs**: Tailored visibility solutions designed for small and medium-sized businesses to win market share in AI search without large budgets.
+
+### 2. Brand Citation Optimization (BCO)
+A specialized discipline within GEO focused on increasing direct brand mentions, comparative shortlist inclusions, and recommendation frequency across AI search engines.
+* **AI Visibility Audits**: Benchmarking brand appearance on conversational models.
+* **Citation Gap Analysis**: Evaluating competitor mentions on key industrial and professional topics.
+* **Brand Entity & Authority Building**: Ensuring search-engine entities match physical credentials and digital signals consistently.
+
+### 3. AI Micro-Applications Development
+We build highly focused, fast-to-deploy, and robust AI software to solve specific operational challenges, replacing generic or slow software systems.
+* **Manufacturing & Industrial**: QA/QC inspection apps, after-sales parts systems, SOP and audit digitizers, and key performance dashboard tools.
+* **SMB Solutions**: Automated lead converters, intake systems, localized intelligence, and customer service helper applications.
+
+### 4. The Discovery Sprint
+A rigorous 1-to-2 week methodology to map problems, build proof-of-concept prototypes, and define clear pathways for software/AI development before substantial investments.
+* **Discover**: Auditing operational bottlenecks and defining scope.
+* **Prototype**: Rapid design and build of functional digital mockups.
+* **Deliver**: Providing fully documented software roadmap and cost blueprints.
+
+---
+
+## Site Structure & Key Resources
+
+* **Homepage (`/`)**: Main portal detailing what Orvelo stands for, process friction audits, method overviews, and case study previews.
+* **Case Studies (`/case-studies`)**: Full catalog of practical evidence across manufacturing, retail, loyalty digitisation, gold investment portals, secure mobile collaboration, and virtual CTO services.
+* **GEO Enterprise Services (`/geo-services`)**: Detail on enterprise-grade Generative Engine Optimization.
+* **GEO SMB Services (`/geo-services-for-smbs`)**: Scalable AI search visibility tactics for small businesses.
+* **Brand Citation Optimization (`/brand-citation-optimization`)**: Comprehensive details on our 9 BCO pillars to drive recommendations on ChatGPT, Gemini, and Perplexity.
+* **AI Micro-Applications (Manufacturing) (`/ai-micro-applications-for-manufacturing-companies`)**: Focused case studies, architectures, and examples of industrial micro-apps.
+* **AI Micro-Applications (SMBs) (`/ai-micro-applications-for-smbs`)**: Cost-effective workflow automations and customer pipelines for small business scale.
+* **Industries (`/industries`)**: Targeted overviews for retail, manufacturing, SaaS, and professional services.
+* **The Discovery Sprint (`/the-discovery-sprint`)**: Details of our signature agile technical strategy blueprint.
+* **Contact (`/contact`)**: Form and inquiry portals to engage our advisors.
+
+---
+
+## Key Contacts & Links
+* **Primary Website**: https://www.orvelo.ai
+* **Meeting Scheduler**: https://calendly.com/orvelo-info/30min
+* **Location**: Advisory team operating globally with delivery hubs in EMEA and APAC.
