@@ -46,8 +46,8 @@ A rigorous 1-to-2 week methodology to map problems, build proof-of-concept proto
   * **Second Article (`/blog/how-bco-changes-your-ai-brand-narrative`)**: Exploration of what AI search engines say about your brand, 5 common patterns of AI brand descriptions, and how BCO systematically shapes and corrects this narrative.
   * **Third Article (`/blog/bco-for-manufacturing-qualified-leads`)**: Demonstration of how BCO helps manufacturers improve AI visibility, attract high-intent buyers, construct specialized positions, and generate more qualified RFQs.
   * **Fourth Article (`/blog/ai-quote-generator-for-manufacturing`)**: Explanation of how an AI Quote Generator operates as a high-value micro-application, capturing estimator knowledge to build faster, more profitable manufacturing quotes.
-  * **Fifth Article (`/blog/ai-sales-enquiry-responder-for-manufacturing`)**: Overview of the AI Sales Enquiry Responder, demonstrating how it receives incomplete incoming inquiries and automatically requests missing details to build quote-ready RFQs.
 * **Contact (`/contact`)**: Form and inquiry portals to engage our advisors.
+* **Upgrade Your Website for 2027 (`/upgrade-your-website-for-2027`)**: Strategic campaign landing page for businesses upgrading their website in 14 days with built-in AI lead follow-up agents, 8+ lead capture touchpoints, AI search engine discoverability, and automated quotation workflows.
 
 ---
 

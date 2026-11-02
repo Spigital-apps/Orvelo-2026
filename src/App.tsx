@@ -14,6 +14,7 @@ import { DiscoverySprint } from './pages/DiscoverySprint';
 import { Contact } from './pages/Contact';
 import { BlogList } from './pages/BlogList';
 import { BlogPostDetail } from './pages/BlogPostDetail';
+import { UpgradeWebsite2027 } from './pages/UpgradeWebsite2027';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { OrveloLogo } from './components/OrveloLogo';
@@ -84,6 +85,12 @@ const Navbar = () => {
                 >
                   AI Micro Apps (SMBs)
                 </Link>
+                <Link 
+                  to="/upgrade-your-website-for-2027" 
+                  className="block px-4 py-2.5 hover:bg-[#cb4b16]/15 rounded-xl text-[#cb4b16] font-bold text-xs uppercase tracking-wider text-center border-t border-white/10"
+                >
+                  ★ Upgrade for 2027
+                </Link>
               </motion.div>
             )}
           </AnimatePresence>
@@ -136,6 +143,9 @@ const Navbar = () => {
               </Link>
               <Link to="/ai-micro-applications-for-smbs" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
                 └ AI Micro Apps (SMBs)
+              </Link>
+              <Link to="/upgrade-your-website-for-2027" onClick={() => setIsOpen(false)} className="text-[#cb4b16] hover:text-[#e05822] py-1.5 text-xs font-extrabold tracking-widest uppercase">
+                ★ Upgrade for 2027
               </Link>
             </div>
             <Link to="/industries" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Industries</Link>
@@ -201,6 +211,7 @@ const Footer = () => (
         © 2026 Orvelo Consulting Group. Precision in Motion.
       </div>
       <div className="flex gap-8 text-[11px] text-slate-400 uppercase tracking-widest font-bold">
+        <Link to="/upgrade-your-website-for-2027" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Upgrade 2027</Link>
         <Link to="/blog" className="hover:text-white transition-colors">Insights</Link>
         <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
@@ -252,6 +263,8 @@ export default function App() {
               <Route path="/brand-citation-optimization" element={<BrandCitationOptimizationSmb />} />
               <Route path="/ai-micro-applications-for-manufacturing-companies" element={<MicroApplications />} />
               <Route path="/ai-micro-applications-for-smbs" element={<MicroApplicationsSmb />} />
+              <Route path="/upgrade-your-website-for-2027" element={<UpgradeWebsite2027 />} />
+              <Route path="/upgrade-website-2027" element={<UpgradeWebsite2027 />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/the-discovery-sprint" element={<DiscoverySprint />} />
               <Route path="/blog" element={<BlogList />} />
