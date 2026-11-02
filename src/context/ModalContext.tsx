@@ -48,7 +48,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
               <h3 className="text-2xl font-light text-white mb-4">Thank you for your interest in Orvelo.</h3>
               <p className="text-white/60 text-lg font-light leading-relaxed mb-8 text-balance">
                 Please mail your requirement to <br/>
-                <span className="text-brand-teal font-medium select-all">info@orvelo.ai</span>
+                <span className="text-brand-teal font-medium select-all">mail@orvelo.ai</span>
               </p>
               
               <button 

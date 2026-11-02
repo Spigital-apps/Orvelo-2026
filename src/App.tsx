@@ -15,6 +15,7 @@ import { Contact } from './pages/Contact';
 import { BlogList } from './pages/BlogList';
 import { BlogPostDetail } from './pages/BlogPostDetail';
 import { UpgradeWebsite2027 } from './pages/UpgradeWebsite2027';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { OrveloLogo } from './components/OrveloLogo';
@@ -215,7 +216,7 @@ const Footer = () => (
         <Link to="/blog" className="hover:text-white transition-colors">Insights</Link>
         <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
-        <a href="#" className="hover:text-white transition-colors">Privacy</a>
+        <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
         <a href="https://www.linkedin.com/company/orvelo-ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
       </div>
     </div>
@@ -270,6 +271,8 @@ export default function App() {
               <Route path="/blog" element={<BlogList />} />
               <Route path="/blog/:slug" element={<BlogPostDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
           </main>
 

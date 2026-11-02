@@ -105,7 +105,7 @@ export const UpgradeWebsite2027 = () => {
       }
     } catch (err) {
       console.error("Submission error:", err);
-      setSubmitError("Network error. Please try again or email info@orvelo.ai directly.");
+      setSubmitError("Network error. Please try again or email mail@orvelo.ai directly.");
     } finally {
       setIsSubmitting(false);
     }

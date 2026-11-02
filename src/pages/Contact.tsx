@@ -125,8 +125,8 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="font-mono text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Direct Email</h4>
-                <a href="mailto:info@orvelo.ai" className="text-slate-800 text-sm font-semibold hover:text-[#cb4b16] transition-colors select-all">
-                  info@orvelo.ai
+                <a href="mailto:mail@orvelo.ai" className="text-slate-800 text-sm font-semibold hover:text-[#cb4b16] transition-colors select-all">
+                  mail@orvelo.ai
                 </a>
                 <p className="text-slate-400 font-light text-[11px]">For general and client inquiries</p>
               </div>
