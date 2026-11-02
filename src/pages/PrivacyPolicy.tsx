@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { SEO } from '../components/SEO';
@@ -17,6 +17,12 @@ import {
 } from 'lucide-react';
 
 export const PrivacyPolicy: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   const lastUpdated = "July 12, 2026";
 
   const quickPillars = [

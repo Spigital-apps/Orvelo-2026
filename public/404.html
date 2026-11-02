@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // Single Page App fallback for static hosting
+      sessionStorage.redirect = location.href;
+    </script>
+    <meta name="robots" content="noindex" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script>
+      window.location.replace('/' + (location.pathname.startsWith('/') ? location.pathname.slice(1) : location.pathname) + location.search + location.hash);
+    </script>
+    <p>Redirecting to <a href="/">Orvelo</a>...</p>
+  </body>
+</html>

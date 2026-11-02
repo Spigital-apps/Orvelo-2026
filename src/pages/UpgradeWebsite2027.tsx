@@ -1,4 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { SEO } from '../components/SEO';
 import { SectionLabel } from '../components/SectionLabel';
@@ -1397,8 +1398,16 @@ export const UpgradeWebsite2027 = () => {
                 <span className="font-mono tracking-wider font-semibold text-slate-300">
                   Orvelo.ai | Engineered for Orbital Velocity
                 </span>
-                <span>
-                  Confidential & Secure • Direct to Senior Engineering
+                <span className="flex items-center gap-2">
+                  <span>Confidential &amp; Secure • Direct to Senior Engineering</span>
+                  <span className="text-slate-600">•</span>
+                  <Link 
+                    to="/privacy" 
+                    onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}
+                    className="text-slate-300 hover:text-white underline transition-colors cursor-pointer"
+                  >
+                    Privacy Policy
+                  </Link>
                 </span>
               </div>
             </div>

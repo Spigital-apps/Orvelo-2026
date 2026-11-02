@@ -154,6 +154,7 @@ const Navbar = () => {
             <Link to="/blog" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Insights</Link>
             <Link to="/case-studies" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Case Studies</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Contact Us</Link>
+            <Link to="/privacy" onClick={() => { setIsOpen(false); window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }} className="text-slate-400 hover:text-white py-1 text-xs font-semibold tracking-wider uppercase">Privacy Policy</Link>
             <a 
               href="https://calendly.com/orvelo-info/30min"
               target="_blank"
@@ -201,22 +202,32 @@ const OrbitalBackground = () => {
 };
 
 const Footer = () => (
-  <footer className="relative py-16 px-6 md:px-24 z-10 border-t border-white/5 max-w-7xl mx-auto w-full text-slate-400 bg-[#0F172A] rounded-[3rem] mb-12 shadow-2xl">
+  <footer className="relative py-14 px-6 md:px-24 z-10 border-t border-white/5 max-w-7xl mx-auto w-full text-slate-400 bg-[#0F172A] rounded-[3rem] mb-12 shadow-2xl">
     <div className="flex flex-col md:flex-row justify-between items-center gap-8">
       <div className="flex items-center gap-3">
-        <Link to="/">
+        <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}>
           <OrveloLogo theme="dark" className="h-9 w-auto opacity-80 hover:opacity-100 transition-opacity" />
         </Link>
       </div>
       <div className="text-[11px] text-slate-400 uppercase tracking-[0.2em] font-medium text-center md:text-left">
         © 2026 Orvelo Consulting Group. Precision in Motion.
       </div>
-      <div className="flex gap-8 text-[11px] text-slate-400 uppercase tracking-widest font-bold">
+      <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 items-center text-[11px] text-slate-400 uppercase tracking-widest font-bold">
         <Link to="/upgrade-your-website-for-2027" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Upgrade 2027</Link>
         <Link to="/blog" className="hover:text-white transition-colors">Insights</Link>
         <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
-        <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+        <Link 
+          to="/privacy" 
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+          }}
+          className="hover:text-white transition-colors cursor-pointer text-slate-300 font-extrabold"
+        >
+          Privacy Policy
+        </Link>
         <a href="https://www.linkedin.com/company/orvelo-ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
       </div>
     </div>
@@ -239,7 +250,12 @@ const ScrollToAnchor = () => {
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [pathname]);
   return null;
 };
@@ -271,8 +287,15 @@ export default function App() {
               <Route path="/blog" element={<BlogList />} />
               <Route path="/blog/:slug" element={<BlogPostDetail />} />
               <Route path="/contact" element={<Contact />} />
+              
+              {/* Privacy Policy routes and aliases */}
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/privacy/" element={<PrivacyPolicy />} />
+              <Route path="/privacy.html" element={<PrivacyPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/privacy-policy/" element={<PrivacyPolicy />} />
+              <Route path="/privacy-policy.html" element={<PrivacyPolicy />} />
+              <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             </Routes>
           </main>
 
