@@ -697,15 +697,15 @@ export const Webinar = () => {
             {/* Host Avatar & Details */}
             <div className="md:col-span-5 text-center md:text-left">
               <div className="relative inline-block mb-6">
-                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden bg-slate-900 border-4 border-white shadow-2xl mx-auto md:mx-0">
+                <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl overflow-hidden bg-slate-950 border-4 border-white shadow-2xl mx-auto md:mx-0 group">
                   <img 
-                    src="/assets/aistudio/AI_Video_Editing_Webinar_Banner_4f39b77e.png" 
-                    alt="Lenin - AI Technology Specialist"
-                    className="w-full h-full object-cover object-[75%_25%]"
+                    src="/assets/aistudio/lenin_smiling.jpg" 
+                    alt="Lenin - AI Technology Specialist and Webinar Host"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="absolute -bottom-2 -right-2 px-3 py-1 rounded-full bg-[#cb4b16] text-white font-mono text-[10px] uppercase font-black tracking-wider shadow-md">
-                  Host
+                <div className="absolute -bottom-2 -right-2 px-3.5 py-1 rounded-full bg-[#cb4b16] text-white font-mono text-[10px] uppercase font-black tracking-wider shadow-lg border-2 border-white">
+                  Webinar Host
                 </div>
               </div>
 
