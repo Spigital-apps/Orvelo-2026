@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { SEO } from '../components/SEO';
@@ -15,24 +15,21 @@ import {
   Volume2, 
   VolumeX, 
   Maximize2, 
-  User, 
-  Mail, 
-  Building2, 
   Briefcase, 
   ChevronDown, 
-  HelpCircle, 
-  ShieldCheck, 
-  Layers, 
+  Building2, 
   Wand2, 
   Film, 
   Type, 
   Share2, 
   Repeat, 
   Star,
-  Check,
   Award,
-  Laptop
+  Laptop,
+  ExternalLink
 } from 'lucide-react';
+
+const CALENDLY_WEBINAR_URL = "https://calendly.com/mail-orvelo/learn-ai-video-editing-claude";
 
 export const Webinar = () => {
   // Video player state
@@ -40,18 +37,6 @@ export const Webinar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [videoProgress, setVideoProgress] = useState(0);
-
-  // Registration Form State
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    companyName: '',
-    designation: '',
-    videoTypes: 'Social Media Updates & Promos'
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // FAQ Accordion State
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -83,50 +68,6 @@ export const Webinar = () => {
     if (!videoRef.current) return;
     if (videoRef.current.requestFullscreen) {
       videoRef.current.requestFullscreen();
-    }
-  };
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify({
-          access_key: "682f14ea-354d-4af0-919e-86c7566732ec",
-          subject: "New Webinar Registration: How to Edit Videos with Claude",
-          from_name: "Orvelo Webinar Registrations",
-          fullName: formData.fullName,
-          email: formData.email,
-          companyName: formData.companyName,
-          designation: formData.designation,
-          videoTypes: formData.videoTypes,
-          page_source: "How to Edit Videos with Claude Webinar Page"
-        })
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        setIsSubmitted(true);
-      } else {
-        setSubmitError(result.message || "Failed to submit registration. Please try again or join via Calendly.");
-      }
-    } catch (err) {
-      console.error("Registration submission error:", err);
-      setSubmitError("Failed to register. Please check your network or register directly via Calendly.");
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -242,13 +183,6 @@ export const Webinar = () => {
     }
   ];
 
-  const scrollToRegistration = () => {
-    const el = document.getElementById('registration-section');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const scrollToVideo = () => {
     const el = document.getElementById('video-demo-section');
     if (el) {
@@ -260,7 +194,7 @@ export const Webinar = () => {
     <div className="pt-24 md:pt-28 pb-20 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto min-h-screen">
       <SEO 
         title="How to Edit Videos with Claude | Live Webinar | Orvelo" 
-        description="Learn how to create professional-quality business videos using AI prompts with Claude. Live online webinar on Friday, November 13, 2026 at 10:00 AM CST."
+        description="Learn how to create professional-quality business videos using AI prompts with Claude. Live online webinar on Friday, November 13, 2026 at 9:30 AM CST."
       />
 
       {/* Hero Badge Pill */}
@@ -279,7 +213,7 @@ export const Webinar = () => {
         className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-2xl mb-12 bg-slate-900 group"
       >
         <img 
-          src="/assets/aistudio/AI_Video_Editing_Webinar_Banner_4f39b77e.png" 
+          src="/assets/aistudio/AI_Video_Editing_Webinar_with_Lenin_7de0c5f1.png" 
           alt="How to Edit Videos with Claude - Live Webinar with Lenin" 
           className="w-full h-auto object-cover max-h-[580px] select-none"
         />
@@ -289,19 +223,21 @@ export const Webinar = () => {
 
         {/* Floating Quick Action overlay on desktop banner */}
         <div className="absolute bottom-6 right-6 hidden sm:flex items-center gap-3 z-10">
-          <button 
-            onClick={scrollToRegistration}
+          <a 
+            href={CALENDLY_WEBINAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 inline-flex items-center gap-2"
           >
             <span>Register Free</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
           <button 
             onClick={scrollToVideo}
             className="px-6 py-3 bg-black/80 hover:bg-black text-white border border-white/20 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 inline-flex items-center gap-2 backdrop-blur-md"
           >
             <Play className="w-3.5 h-3.5 text-[#cb4b16] fill-[#cb4b16]" />
-            <span>Watch Preview</span>
+            <span>Watch Intro Video</span>
           </button>
         </div>
       </motion.div>
@@ -336,7 +272,7 @@ export const Webinar = () => {
             </div>
             <div>
               <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Time</div>
-              <div className="text-xs font-black text-slate-900">10:00 AM CST <span className="text-slate-500 font-normal">(9 PM IST)</span></div>
+              <div className="text-xs font-black text-slate-900">9:30 AM CST</div>
             </div>
           </div>
 
@@ -363,19 +299,21 @@ export const Webinar = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button 
-            onClick={scrollToRegistration}
+          <a 
+            href={CALENDLY_WEBINAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/25 active:scale-95 inline-flex items-center justify-center gap-3"
           >
             <span>Register Now</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
           <button 
             onClick={scrollToVideo}
             className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-sm active:scale-95 inline-flex items-center justify-center gap-2"
           >
             <Play className="w-3.5 h-3.5 text-[#cb4b16] fill-[#cb4b16]" />
-            <span>Watch Demonstration Video</span>
+            <span>Watch Intro Video</span>
           </button>
         </div>
       </div>
@@ -588,7 +526,7 @@ export const Webinar = () => {
                         <Play className="w-7 h-7 fill-white translate-x-0.5" />
                       </div>
                       <div className="mt-4 text-xs font-bold uppercase tracking-wider text-white px-4 py-1.5 rounded-full bg-black/60 border border-white/10">
-                        Click to Play Demo
+                        Click to Play Intro Video
                       </div>
                     </div>
                   )}
@@ -613,7 +551,7 @@ export const Webinar = () => {
                       </button>
 
                       <span className="text-[10px] font-mono text-slate-300">
-                        Lenin • Video Demo
+                        Lenin • Intro Video
                       </span>
 
                       <div className="flex items-center gap-2">
@@ -677,13 +615,15 @@ export const Webinar = () => {
               </div>
 
               <div className="pt-2">
-                <button 
-                  onClick={scrollToRegistration}
+                <a 
+                  href={CALENDLY_WEBINAR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-3.5 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg active:scale-95 inline-flex items-center justify-center gap-2"
                 >
-                  <span>Learn This Entire Workflow Live</span>
+                  <span>Register Free on Calendly</span>
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -800,7 +740,7 @@ export const Webinar = () => {
         </div>
       </section>
 
-      {/* SECTION 8: Reserve Your Spot (Registration Form) */}
+      {/* SECTION 8: Reserve Your Spot (Calendly Registration) */}
       <section id="registration-section" className="mb-24 scroll-mt-28">
         <div className="p-8 sm:p-12 md:p-16 rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white shadow-2xl border border-white/10 max-w-4xl mx-auto relative overflow-hidden">
           {/* Ambient glow */}
@@ -816,7 +756,7 @@ export const Webinar = () => {
                 Start Creating Better Business Videos with AI
               </p>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Join us for a practical introduction to editing business videos with Claude. Free live access with full live demonstration and Q&amp;A.
+                Join us for a practical introduction to editing business videos with Claude. Free live access with full live demonstration, workflow templates, and interactive Q&amp;A.
               </p>
 
               {/* Event snapshot card */}
@@ -827,7 +767,7 @@ export const Webinar = () => {
                 </span>
                 <span className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-[#cb4b16]" />
-                  <strong className="text-white">10:00 AM CST (9:00 PM IST)</strong>
+                  <strong className="text-white">9:30 AM CST</strong>
                 </span>
                 <span className="flex items-center gap-2">
                   <Laptop className="w-4 h-4 text-[#cb4b16]" />
@@ -836,181 +776,54 @@ export const Webinar = () => {
               </div>
             </div>
 
-            {/* Registration Form */}
-            {isSubmitted ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="p-8 sm:p-12 rounded-3xl bg-white/10 border border-emerald-500/30 text-center max-w-xl mx-auto backdrop-blur-md"
+            {/* Calendly Registration Card */}
+            <div className="max-w-xl mx-auto p-8 sm:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md text-center shadow-xl">
+              <div className="w-16 h-16 rounded-2xl bg-[#cb4b16]/20 border border-[#cb4b16]/30 text-[#cb4b16] flex items-center justify-center mx-auto mb-6">
+                <Calendar className="w-8 h-8" />
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-3">
+                Register Instantly via Calendly
+              </h3>
+
+              <p className="text-xs sm:text-sm text-slate-300 mb-8 leading-relaxed max-w-md mx-auto">
+                Select your spot on Calendly to receive your automatic calendar invite with direct Zoom / Stream joining credentials.
+              </p>
+
+              <div className="space-y-3 mb-8 text-left max-w-md mx-auto">
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>100% Free Live Online Access</span>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Instant Calendar Invite (Google, Outlook, Apple)</span>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Live Q&amp;A directly with Lenin (@buildwithlenin)</span>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>No credit card or software installation required</span>
+                </div>
+              </div>
+
+              <a 
+                href={CALENDLY_WEBINAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-black text-xs uppercase tracking-wider transition-all shadow-2xl shadow-[#cb4b16]/40 active:scale-95 group"
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-5 border border-emerald-500/40">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-2">
-                  You&apos;re Registered!
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
-                  Thank you, <strong className="text-white">{formData.fullName}</strong>. We have reserved your seat for <strong className="text-[#cb4b16]">Friday, November 13, 2026 at 10:00 AM CST</strong>.
-                </p>
-                <div className="p-4 rounded-2xl bg-black/40 border border-white/10 text-xs text-slate-400 mb-6">
-                  Webinar joining link and calendar invite have been dispatched to <strong className="text-white">{formData.email}</strong>.
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <a 
-                    href="https://calendly.com/orvelo-info/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all"
-                  >
-                    Add to Calendar (Calendly)
-                  </a>
-                  <button 
-                    onClick={() => setIsSubmitted(false)}
-                    className="px-6 py-3 bg-white/10 hover:bg-white/20 text-slate-300 rounded-full font-bold text-xs uppercase tracking-wider transition-all"
-                  >
-                    Register Another Person
-                  </button>
-                </div>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 max-w-xl mx-auto">
-                {submitError && (
-                  <div className="p-4 rounded-2xl bg-red-950/80 border border-red-500 text-red-200 text-xs">
-                    {submitError}
-                  </div>
-                )}
+                <span>Register Now on Calendly</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
 
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    Full Name <span className="text-[#cb4b16]">*</span>
-                  </label>
-                  <div className="relative">
-                    <User className="w-4 h-4 text-slate-500 absolute left-4 top-1/2 -translate-y-1/2" />
-                    <input 
-                      type="text" 
-                      name="fullName"
-                      required
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      placeholder="e.g. Sarah Jenkins"
-                      className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#cb4b16] text-xs transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    Business Email <span className="text-[#cb4b16]">*</span>
-                  </label>
-                  <div className="relative">
-                    <Mail className="w-4 h-4 text-slate-500 absolute left-4 top-1/2 -translate-y-1/2" />
-                    <input 
-                      type="email" 
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="name@company.com"
-                      className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#cb4b16] text-xs transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                      Company Name <span className="text-[#cb4b16]">*</span>
-                    </label>
-                    <div className="relative">
-                      <Building2 className="w-4 h-4 text-slate-500 absolute left-4 top-1/2 -translate-y-1/2" />
-                      <input 
-                        type="text" 
-                        name="companyName"
-                        required
-                        value={formData.companyName}
-                        onChange={handleInputChange}
-                        placeholder="Company or Business"
-                        className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#cb4b16] text-xs transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                      Your Role / Designation
-                    </label>
-                    <div className="relative">
-                      <Briefcase className="w-4 h-4 text-slate-500 absolute left-4 top-1/2 -translate-y-1/2" />
-                      <input 
-                        type="text" 
-                        name="designation"
-                        value={formData.designation}
-                        onChange={handleInputChange}
-                        placeholder="e.g. Founder, Marketing Lead"
-                        className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#cb4b16] text-xs transition-all"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    What type of videos would you like to create? (Optional)
-                  </label>
-                  <select 
-                    name="videoTypes"
-                    value={formData.videoTypes}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#cb4b16] text-xs transition-all"
-                  >
-                    <option value="Social Media Updates & Promos">Social Media Updates &amp; Promos (LinkedIn, IG)</option>
-                    <option value="Product Demos & Feature Walkthroughs">Product Demos &amp; Feature Walkthroughs</option>
-                    <option value="Customer Testimonials & Case Studies">Customer Testimonials &amp; Case Studies</option>
-                    <option value="Manufacturing & Capability Spotlights">Manufacturing &amp; Capability Spotlights</option>
-                    <option value="Founder & Leadership Insights">Founder &amp; Leadership Insights</option>
-                    <option value="Not Sure - Want to explore all">Not Sure - Want to explore all</option>
-                  </select>
-                </div>
-
-                <div className="pt-3">
-                  <button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/30 active:scale-95 disabled:opacity-50 inline-flex items-center justify-center gap-2"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        <span>Reserving Your Seat...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Register Now</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                {/* Alternative Calendly Option */}
-                <div className="pt-4 text-center border-t border-white/10">
-                  <p className="text-xs text-slate-400 mb-2">Prefer to register or sync directly via Calendly?</p>
-                  <a 
-                    href="https://calendly.com/orvelo-info/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#cb4b16] hover:text-[#e05822] uppercase tracking-wider underline transition-colors"
-                  >
-                    <span>Register via Calendly</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-
-                <div className="text-center text-[11px] text-slate-400 pt-1">
-                  * Your webinar joining details and stream links will be shared via email immediately upon registration.
-                </div>
-              </form>
-            )}
+              <div className="mt-5 text-[11px] text-slate-400 font-mono flex items-center justify-center gap-1.5">
+                <ExternalLink className="w-3 h-3 text-slate-400" />
+                <span>Opens registration at calendly.com/mail-orvelo</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1085,17 +898,19 @@ export const Webinar = () => {
 
             <div className="mb-8">
               <span className="inline-block px-5 py-2 rounded-full bg-white/10 text-white font-mono text-xs uppercase font-extrabold tracking-wider border border-white/10">
-                November 13, 2026 | 10:00 AM CST
+                November 13, 2026 | 9:30 AM CST
               </span>
             </div>
 
-            <button 
-              onClick={scrollToRegistration}
+            <a 
+              href={CALENDLY_WEBINAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/30 active:scale-95 inline-flex items-center gap-3"
             >
               <span>Register Now</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
 
             <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
               <span className="font-mono tracking-wider font-semibold text-slate-400">
