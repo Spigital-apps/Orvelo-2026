@@ -16,6 +16,7 @@ import { BlogList } from './pages/BlogList';
 import { BlogPostDetail } from './pages/BlogPostDetail';
 import { UpgradeWebsite2027 } from './pages/UpgradeWebsite2027';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { Webinar } from './pages/Webinar';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { OrveloLogo } from './components/OrveloLogo';
@@ -69,6 +70,12 @@ const Navbar = () => {
                   Overview
                 </Link>
                 <Link 
+                  to="/the-discovery-sprint" 
+                  className="block px-4 py-2.5 hover:bg-white/5 rounded-xl text-slate-300 hover:text-white text-xs font-semibold uppercase tracking-wider text-center border-t border-white/5"
+                >
+                  The Discovery Sprint
+                </Link>
+                <Link 
                   to="/geo-services-for-smbs" 
                   className="block px-4 py-2.5 hover:bg-white/5 rounded-xl text-slate-300 hover:text-white text-xs font-semibold uppercase tracking-wider text-center border-t border-white/5"
                 >
@@ -98,7 +105,10 @@ const Navbar = () => {
         </div>
 
         <Link to="/industries" className={`hover:text-white transition-colors ${location.pathname.startsWith('/industries') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Industries</Link>
-        <Link to="/the-discovery-sprint" className={`hover:text-white transition-colors ${location.pathname === '/the-discovery-sprint' ? 'text-[#cb4b16] font-extrabold' : ''}`}>The Sprint</Link>
+        <Link to="/webinar" className={`hover:text-white transition-colors flex items-center gap-1.5 ${location.pathname.startsWith('/webinar') || location.pathname.startsWith('/how-to-edit-videos-with-claude') ? 'text-[#cb4b16] font-extrabold' : ''}`}>
+          <span>Webinar</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#cb4b16] animate-pulse" />
+        </Link>
         <Link to="/blog" className={`hover:text-white transition-colors ${location.pathname.startsWith('/blog') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Insights</Link>
         <Link to="/case-studies" className={`hover:text-white transition-colors ${location.pathname.startsWith('/case-studies') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Case Studies</Link>
         <Link to="/contact" className={`hover:text-white transition-colors ${location.pathname === '/contact' ? 'text-[#cb4b16] font-extrabold' : ''}`}>Contact</Link>
@@ -136,6 +146,9 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-2 py-1 border-b border-white/5">
               <Link to="/#who" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1 font-semibold text-sm tracking-wide uppercase">What we do</Link>
+              <Link to="/the-discovery-sprint" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
+                └ The Sprint
+              </Link>
               <Link to="/geo-services-for-smbs" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase">
                 └ GEO (SMBs)
               </Link>
@@ -150,7 +163,10 @@ const Navbar = () => {
               </Link>
             </div>
             <Link to="/industries" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Industries</Link>
-            <Link to="/the-discovery-sprint" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">The Sprint</Link>
+            <Link to="/webinar" onClick={() => setIsOpen(false)} className="text-[#cb4b16] hover:text-white py-1.5 font-extrabold text-sm tracking-wide flex items-center justify-center gap-2">
+              <span>Webinar</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#cb4b16] animate-pulse" />
+            </Link>
             <Link to="/blog" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Insights</Link>
             <Link to="/case-studies" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Case Studies</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Contact Us</Link>
@@ -214,6 +230,7 @@ const Footer = () => (
       </div>
       <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 items-center text-[11px] text-slate-400 uppercase tracking-widest font-bold">
         <Link to="/upgrade-your-website-for-2027" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Upgrade 2027</Link>
+        <Link to="/webinar" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Webinar</Link>
         <Link to="/blog" className="hover:text-white transition-colors">Insights</Link>
         <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
@@ -282,6 +299,14 @@ export default function App() {
               <Route path="/ai-micro-applications-for-smbs" element={<MicroApplicationsSmb />} />
               <Route path="/upgrade-your-website-for-2027" element={<UpgradeWebsite2027 />} />
               <Route path="/upgrade-website-2027" element={<UpgradeWebsite2027 />} />
+              
+              {/* Webinar routes */}
+              <Route path="/webinar" element={<Webinar />} />
+              <Route path="/webinar/" element={<Webinar />} />
+              <Route path="/webinars" element={<Webinar />} />
+              <Route path="/how-to-edit-videos-with-claude" element={<Webinar />} />
+              <Route path="/how-to-edit-videos-with-claude/" element={<Webinar />} />
+
               <Route path="/industries" element={<Industries />} />
               <Route path="/the-discovery-sprint" element={<DiscoverySprint />} />
               <Route path="/blog" element={<BlogList />} />
