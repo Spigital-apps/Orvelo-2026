@@ -17,6 +17,8 @@ import { BlogPostDetail } from './pages/BlogPostDetail';
 import { UpgradeWebsite2027 } from './pages/UpgradeWebsite2027';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { Webinar } from './pages/Webinar';
+import { WebinarWebsites2027 } from './pages/WebinarWebsites2027';
+import { WebinarProposals2026 } from './pages/WebinarProposals2026';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { OrveloLogo } from './components/OrveloLogo';
@@ -28,11 +30,13 @@ const Navbar = () => {
   const { openModal } = useModal();
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownHovered, setIsDropdownHovered] = useState(false);
+  const [isWebinarsDropdownHovered, setIsWebinarsDropdownHovered] = useState(false);
 
   // Close mobile menu on navigate
   useEffect(() => {
     setIsOpen(false);
     setIsDropdownHovered(false);
+    setIsWebinarsDropdownHovered(false);
   }, [location]);
 
   return (
@@ -105,10 +109,68 @@ const Navbar = () => {
         </div>
 
         <Link to="/industries" className={`hover:text-white transition-colors ${location.pathname.startsWith('/industries') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Industries</Link>
-        <Link to="/webinar" className={`hover:text-white transition-colors flex items-center gap-1.5 ${location.pathname.startsWith('/webinar') || location.pathname.startsWith('/how-to-edit-videos-with-claude') ? 'text-[#cb4b16] font-extrabold' : ''}`}>
-          <span>Webinar</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#cb4b16] animate-pulse" />
-        </Link>
+
+        {/* Webinars Dropdown */}
+        <div 
+          className="relative py-2"
+          onMouseEnter={() => setIsWebinarsDropdownHovered(true)}
+          onMouseLeave={() => setIsWebinarsDropdownHovered(false)}
+        >
+          <button className={`hover:text-white flex items-center gap-1.5 transition-colors focus:outline-none uppercase ${location.pathname.includes('/webinar') || location.pathname.includes('/how-to-edit-videos-with-claude') ? 'text-[#cb4b16] font-extrabold' : ''}`}>
+            <span>WEBINARS</span>
+            <ChevronDown className="w-3 h-3 opacity-60" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#cb4b16] animate-pulse" />
+          </button>
+          
+          <AnimatePresence>
+            {isWebinarsDropdownHovered && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="absolute left-1/2 -translate-x-1/2 mt-2 w-72 bg-black/95 backdrop-blur-md border border-white/10 rounded-2xl p-2 shadow-2xl z-[100] text-left animate-none"
+              >
+                <Link 
+                  to="/webinars/video-editing-with-ai" 
+                  className="block px-4 py-2.5 hover:bg-white/5 rounded-xl transition-colors group"
+                >
+                  <div className="text-white text-xs font-bold tracking-wide group-hover:text-[#cb4b16] transition-colors">
+                    Video Editing with AI
+                  </div>
+                  <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                    Friday, Nov 13 • 9:30 AM CST
+                  </div>
+                </Link>
+
+                <Link 
+                  to="/webinars/websites-with-ai-2027" 
+                  className="block px-4 py-2.5 hover:bg-white/5 rounded-xl transition-colors group border-t border-white/5"
+                >
+                  <div className="text-white text-xs font-bold tracking-wide group-hover:text-[#cb4b16] transition-colors flex items-center gap-1.5">
+                    <span>Websites with AI (2027)</span>
+                  </div>
+                  <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                    Friday, Nov 20 • 9:30 AM CST
+                  </div>
+                </Link>
+
+                <Link 
+                  to="/webinars/automated-proposal-and-lead-generation-with-ai" 
+                  className="block px-4 py-2.5 hover:bg-[#cb4b16]/10 rounded-xl transition-colors group border-t border-white/5"
+                >
+                  <div className="text-[#cb4b16] text-xs font-bold tracking-wide group-hover:text-[#e05822] transition-colors flex items-center gap-1.5">
+                    <span>★ Proposals &amp; Leads with AI</span>
+                  </div>
+                  <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                    Friday, Nov 27 • 9:30 AM CST
+                  </div>
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
         <Link to="/blog" className={`hover:text-white transition-colors ${location.pathname.startsWith('/blog') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Insights</Link>
         <Link to="/case-studies" className={`hover:text-white transition-colors ${location.pathname.startsWith('/case-studies') ? 'text-[#cb4b16] font-extrabold' : ''}`}>Case Studies</Link>
         <Link to="/contact" className={`hover:text-white transition-colors ${location.pathname === '/contact' ? 'text-[#cb4b16] font-extrabold' : ''}`}>Contact</Link>
@@ -162,11 +224,37 @@ const Navbar = () => {
                 ★ Upgrade for 2027
               </Link>
             </div>
+
+            {/* Mobile Webinars Section */}
+            <div className="flex flex-col gap-2 py-1 border-b border-white/5">
+              <span className="text-slate-300 py-1 font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2">
+                <span>Webinars</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#cb4b16] animate-pulse" />
+              </span>
+              <Link 
+                to="/webinars/video-editing-with-ai" 
+                onClick={() => setIsOpen(false)} 
+                className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase"
+              >
+                └ Video Editing with AI (Nov 13)
+              </Link>
+              <Link 
+                to="/webinars/websites-with-ai-2027" 
+                onClick={() => setIsOpen(false)} 
+                className="text-slate-400 hover:text-[#cb4b16] py-1 text-xs font-bold tracking-widest uppercase"
+              >
+                └ Websites with AI 2027 (Nov 20)
+              </Link>
+              <Link 
+                to="/webinars/automated-proposal-and-lead-generation-with-ai" 
+                onClick={() => setIsOpen(false)} 
+                className="text-[#cb4b16] hover:text-[#e05822] py-1 text-xs font-extrabold tracking-widest uppercase"
+              >
+                ★ Proposals &amp; Leads with AI (Nov 27)
+              </Link>
+            </div>
+
             <Link to="/industries" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Industries</Link>
-            <Link to="/webinar" onClick={() => setIsOpen(false)} className="text-[#cb4b16] hover:text-white py-1.5 font-extrabold text-sm tracking-wide flex items-center justify-center gap-2">
-              <span>Webinar</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#cb4b16] animate-pulse" />
-            </Link>
             <Link to="/blog" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Insights</Link>
             <Link to="/case-studies" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Case Studies</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-white py-1.5 font-semibold text-sm tracking-wide">Contact Us</Link>
@@ -230,7 +318,9 @@ const Footer = () => (
       </div>
       <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 items-center text-[11px] text-slate-400 uppercase tracking-widest font-bold">
         <Link to="/upgrade-your-website-for-2027" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Upgrade 2027</Link>
-        <Link to="/webinar" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Webinar</Link>
+        <Link to="/webinars/video-editing-with-ai" className="text-slate-400 hover:text-white transition-colors">Video AI</Link>
+        <Link to="/webinars/websites-with-ai-2027" className="text-slate-400 hover:text-white transition-colors">Websites AI</Link>
+        <Link to="/webinars/automated-proposal-and-lead-generation-with-ai" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Proposals &amp; Leads AI</Link>
         <Link to="/blog" className="hover:text-white transition-colors">Insights</Link>
         <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
@@ -300,12 +390,35 @@ export default function App() {
               <Route path="/upgrade-your-website-for-2027" element={<UpgradeWebsite2027 />} />
               <Route path="/upgrade-website-2027" element={<UpgradeWebsite2027 />} />
               
-              {/* Webinar routes */}
+              {/* Video Editing Webinar routes */}
               <Route path="/webinar" element={<Webinar />} />
               <Route path="/webinar/" element={<Webinar />} />
               <Route path="/webinars" element={<Webinar />} />
+              <Route path="/webinars/" element={<Webinar />} />
+              <Route path="/webinars/video-editing-with-ai" element={<Webinar />} />
+              <Route path="/webinars/video-editing-with-ai/" element={<Webinar />} />
               <Route path="/how-to-edit-videos-with-claude" element={<Webinar />} />
               <Route path="/how-to-edit-videos-with-claude/" element={<Webinar />} />
+
+              {/* Websites with AI 2027 Webinar routes */}
+              <Route path="/webinars/websites-with-ai-2027" element={<WebinarWebsites2027 />} />
+              <Route path="/webinars/websites-with-ai-2027/" element={<WebinarWebsites2027 />} />
+              <Route path="/webinars/websites-with-ai" element={<WebinarWebsites2027 />} />
+              <Route path="/webinars/websites-with-ai/" element={<WebinarWebsites2027 />} />
+              <Route path="/make-your-website-generate-leads-in-2027" element={<WebinarWebsites2027 />} />
+              <Route path="/make-your-website-generate-leads-in-2027/" element={<WebinarWebsites2027 />} />
+              <Route path="/make-your-website-generate-leads-for-you-in-2027" element={<WebinarWebsites2027 />} />
+              <Route path="/make-your-website-generate-leads-for-you-in-2027/" element={<WebinarWebsites2027 />} />
+
+              {/* Automated Proposals & Lead Gen Webinar routes */}
+              <Route path="/webinars/automated-proposal-and-lead-generation-with-ai" element={<WebinarProposals2026 />} />
+              <Route path="/webinars/automated-proposal-and-lead-generation-with-ai/" element={<WebinarProposals2026 />} />
+              <Route path="/webinars/automated-proposal-lead-generation" element={<WebinarProposals2026 />} />
+              <Route path="/webinars/automated-proposal-lead-generation/" element={<WebinarProposals2026 />} />
+              <Route path="/automated-proposal-and-lead-generation-with-ai" element={<WebinarProposals2026 />} />
+              <Route path="/automated-proposal-and-lead-generation-with-ai/" element={<WebinarProposals2026 />} />
+              <Route path="/automated-proposal-lead-generation-ai" element={<WebinarProposals2026 />} />
+              <Route path="/automated-proposal-lead-generation-ai/" element={<WebinarProposals2026 />} />
 
               <Route path="/industries" element={<Industries />} />
               <Route path="/the-discovery-sprint" element={<DiscoverySprint />} />
