@@ -1,15 +1,13 @@
-import { useState, useRef, FormEvent, ChangeEvent } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { SEO } from '../components/SEO';
 import { SectionLabel } from '../components/SectionLabel';
 import { 
-  Sparkles, 
   ArrowRight, 
   CheckCircle2, 
   Clock, 
   Calendar, 
-  Video, 
   Play, 
   Pause, 
   Volume2, 
@@ -20,23 +18,18 @@ import {
   Building2, 
   Search, 
   Bot, 
-  Mail, 
   Layers, 
   FileText, 
   Star,
-  Award,
   Laptop,
   ExternalLink,
   Users,
   Target,
   Zap,
-  Globe,
-  Check,
-  Send,
-  MessageSquare
+  Globe
 } from 'lucide-react';
 
-const CALENDLY_URL = "https://calendly.com/orvelo-info/30min";
+const CALENDLY_URL = "https://calendly.com/mail-orvelo/generate-leads-website-2027";
 
 export const WebinarWebsites2027 = () => {
   // Video player state
@@ -47,64 +40,6 @@ export const WebinarWebsites2027 = () => {
 
   // FAQ Accordion State
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  // Registration Form State
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    companyName: '',
-    websiteUrl: '',
-    designation: '',
-    improvements: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify({
-          access_key: "682f14ea-354d-4af0-919e-86c7566732ec",
-          subject: "New Webinar Registration: Make Your Website Generate Leads (2027)",
-          name: formData.name,
-          email: formData.email,
-          companyName: formData.companyName,
-          websiteUrl: formData.websiteUrl,
-          designation: formData.designation,
-          improvements: formData.improvements,
-          webinarDate: "Friday, November 20, 2026 | 9:30 AM CST",
-          message: `Webinar Registration: Make Your Website Generate Leads for You in 2027\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.companyName}\nWebsite: ${formData.websiteUrl}\nDesignation: ${formData.designation}\nKey Goals: ${formData.improvements || 'Not specified'}`
-        })
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        setIsSubmitted(true);
-      } else {
-        setSubmitError(result.message || "Failed to submit registration. Please try again.");
-      }
-    } catch (err) {
-      console.error("Submission error:", err);
-      setSubmitError("Network error. Please try again or register directly via Calendly.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const toggleVideoPlayback = () => {
     if (!videoRef.current) return;
@@ -133,13 +68,6 @@ export const WebinarWebsites2027 = () => {
     if (!videoRef.current) return;
     if (videoRef.current.requestFullscreen) {
       videoRef.current.requestFullscreen();
-    }
-  };
-
-  const scrollToRegistration = () => {
-    const el = document.getElementById('registration-section');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -314,19 +242,21 @@ export const WebinarWebsites2027 = () => {
 
         {/* Floating Quick Action overlay on desktop banner */}
         <div className="absolute bottom-6 right-6 hidden sm:flex items-center gap-3 z-10">
-          <button 
-            onClick={scrollToRegistration}
+          <a 
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 inline-flex items-center gap-2"
           >
             <span>Register Free</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
           <button 
             onClick={scrollToVideo}
             className="px-6 py-3 bg-black/80 hover:bg-black text-white border border-white/20 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 inline-flex items-center gap-2 backdrop-blur-md"
           >
             <Play className="w-3.5 h-3.5 text-[#cb4b16] fill-[#cb4b16]" />
-            <span>Watch Demonstration</span>
+            <span>Watch Intro Video</span>
           </button>
         </div>
       </motion.div>
@@ -389,19 +319,21 @@ export const WebinarWebsites2027 = () => {
 
         {/* Hero CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button 
-            onClick={scrollToRegistration}
+          <a 
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/25 active:scale-95 inline-flex items-center justify-center gap-3"
           >
             <span>Register Now</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
           <button 
             onClick={scrollToVideo}
             className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-sm active:scale-95 inline-flex items-center justify-center gap-2"
           >
             <Play className="w-3.5 h-3.5 text-[#cb4b16] fill-[#cb4b16]" />
-            <span>Watch Demonstration</span>
+            <span>Watch Intro Video</span>
           </button>
         </div>
       </div>
@@ -600,15 +532,18 @@ export const WebinarWebsites2027 = () => {
                 </div>
 
                 {/* Video Container */}
-                <div className="relative rounded-[2rem] overflow-hidden bg-black aspect-[9/16] shadow-inner flex items-center justify-center">
+                <div className="relative rounded-[2rem] overflow-hidden bg-slate-950 aspect-[9/16] shadow-inner">
                   <video
                     ref={videoRef}
-                    src="/assets/aistudio/Webianr_fff21c3e.mp4"
+                    src="/assets/aistudio/webinar_website_web.mp4"
+                    poster="/assets/aistudio/webinar_website_poster.jpg"
                     playsInline
-                    preload="metadata"
+                    preload="auto"
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
                     onTimeUpdate={handleTimeUpdate}
                     onEnded={() => setIsPlaying(false)}
-                    className="w-full h-full object-cover cursor-pointer"
+                    className="w-full h-full object-cover cursor-pointer block"
                     onClick={toggleVideoPlayback}
                   />
 
@@ -616,13 +551,13 @@ export const WebinarWebsites2027 = () => {
                   {!isPlaying && (
                     <div 
                       onClick={toggleVideoPlayback}
-                      className="absolute inset-0 bg-black/40 backdrop-blur-xs flex flex-col items-center justify-center cursor-pointer group"
+                      className="absolute inset-0 bg-black/25 flex flex-col items-center justify-center cursor-pointer group"
                     >
                       <div className="w-16 h-16 rounded-full bg-[#cb4b16] group-hover:bg-[#b33f11] text-white flex items-center justify-center shadow-xl transition-all group-hover:scale-110">
                         <Play className="w-7 h-7 fill-white translate-x-0.5" />
                       </div>
-                      <div className="mt-4 text-xs font-bold uppercase tracking-wider text-white px-4 py-1.5 rounded-full bg-black/60 border border-white/10">
-                        Click to Play Demo
+                      <div className="mt-4 text-xs font-bold uppercase tracking-wider text-white px-4 py-1.5 rounded-full bg-black/70 border border-white/15">
+                        Click to Play Intro Video
                       </div>
                     </div>
                   )}
@@ -646,7 +581,7 @@ export const WebinarWebsites2027 = () => {
                       </button>
 
                       <span className="text-[10px] font-mono text-slate-300">
-                        Demonstration Video
+                        Intro Video
                       </span>
 
                       <div className="flex items-center gap-2">
@@ -959,163 +894,54 @@ export const WebinarWebsites2027 = () => {
               </div>
             </div>
 
-            {/* Registration Form / Success State */}
-            {isSubmitted ? (
-              <div className="max-w-xl mx-auto p-8 rounded-3xl bg-white/10 border border-white/20 text-center backdrop-blur-md">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
-                  <Check className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-2">
-                  You&apos;re Registered!
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
-                  Thank you for reserving your spot for <strong>Make Your Website Generate Leads for You in 2027</strong>. We have sent the confirmation and calendar credentials to your email.
-                </p>
-                <div className="p-4 rounded-2xl bg-black/40 border border-white/10 text-xs font-mono text-slate-300 mb-6">
-                  Friday, November 20, 2026 • 9:30 AM CST • Live Online
-                </div>
-                <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all"
-                >
-                  <span>Add to Calendar / Book Discussion</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+            {/* Calendly Registration Card */}
+            <div className="max-w-xl mx-auto p-8 sm:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md text-center shadow-xl">
+              <div className="w-16 h-16 rounded-2xl bg-[#cb4b16]/20 border border-[#cb4b16]/30 text-[#cb4b16] flex items-center justify-center mx-auto mb-6">
+                <Calendar className="w-8 h-8" />
               </div>
-            ) : (
-              <div className="max-w-2xl mx-auto">
-                <form onSubmit={handleFormSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Full Name *
-                      </label>
-                      <input 
-                        type="text" 
-                        name="name" 
-                        required 
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
 
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Business Email *
-                      </label>
-                      <input 
-                        type="email" 
-                        name="email" 
-                        required 
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="john@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
-                  </div>
+              <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-3">
+                Register Instantly via Calendly
+              </h3>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Company Name *
-                      </label>
-                      <input 
-                        type="text" 
-                        name="companyName" 
-                        required 
-                        value={formData.companyName}
-                        onChange={handleInputChange}
-                        placeholder="Acme Industrial Corp"
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
+              <p className="text-xs sm:text-sm text-slate-300 mb-8 leading-relaxed max-w-md mx-auto">
+                Reserve your spot on Calendly to receive your automatic calendar invite with direct joining credentials.
+              </p>
 
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Existing Website URL
-                      </label>
-                      <input 
-                        type="text" 
-                        name="websiteUrl" 
-                        value={formData.websiteUrl}
-                        onChange={handleInputChange}
-                        placeholder="https://example.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                      Your Role / Designation
-                    </label>
-                    <input 
-                      type="text" 
-                      name="designation" 
-                      value={formData.designation}
-                      onChange={handleInputChange}
-                      placeholder="Founder, Managing Director, VP Marketing, etc."
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                      What would you most like to improve about your website?
-                    </label>
-                    <textarea 
-                      name="improvements" 
-                      rows={2}
-                      value={formData.improvements}
-                      onChange={handleInputChange}
-                      placeholder="e.g. Generate more RFQs, speed up quote replies, appear on ChatGPT searches..."
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors resize-none"
-                    />
-                  </div>
-
-                  {submitError && (
-                    <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/30 text-xs text-red-300">
-                      {submitError}
-                    </div>
-                  )}
-
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="w-full sm:w-auto px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/30 active:scale-95 inline-flex items-center justify-center gap-2 disabled:opacity-50"
-                    >
-                      {isSubmitting ? (
-                        <span>Registering...</span>
-                      ) : (
-                        <>
-                          <span>Reserve My Free Seat</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
-
-                    <div className="text-center sm:text-right">
-                      <span className="text-[11px] text-slate-400 block">Prefer scheduling via Calendly?</span>
-                      <a 
-                        href={CALENDLY_URL} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-xs text-[#cb4b16] hover:underline font-bold inline-flex items-center gap-1"
-                      >
-                        <span>Book on Calendly</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </div>
-                  </div>
-                </form>
+              <div className="space-y-3 mb-8 text-left max-w-md mx-auto">
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>100% Free Live Online Access</span>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Instant Calendar Invite (Google, Outlook, Apple)</span>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Live Q&amp;A directly with Anand &amp; Kevin</span>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>No technical or programming experience required</span>
+                </div>
               </div>
-            )}
+
+              <a 
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-black text-xs uppercase tracking-wider transition-all shadow-2xl shadow-[#cb4b16]/40 active:scale-95 group"
+              >
+                <span>Register Now on Calendly</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <div className="mt-5 text-[11px] text-slate-400 font-mono flex items-center justify-center gap-1.5">
+                <ExternalLink className="w-3 h-3 text-slate-400" />
+                <span>Opens registration at calendly.com/mail-orvelo</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1144,13 +970,15 @@ export const WebinarWebsites2027 = () => {
               </span>
             </div>
 
-            <button 
-              onClick={scrollToRegistration}
+            <a 
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/30 active:scale-95 inline-flex items-center gap-3"
             >
               <span>Register Now</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
 
             <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
               <span className="font-mono tracking-wider font-semibold text-slate-400">
