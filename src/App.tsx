@@ -156,11 +156,11 @@ const Navbar = () => {
                 </Link>
 
                 <Link 
-                  to="/webinars/automated-proposal-and-lead-generation-with-ai" 
+                  to="/webinars/business-proposals-with-claude-ai" 
                   className="block px-4 py-2.5 hover:bg-[#cb4b16]/10 rounded-xl transition-colors group border-t border-white/5"
                 >
                   <div className="text-[#cb4b16] text-xs font-bold tracking-wide group-hover:text-[#e05822] transition-colors flex items-center gap-1.5">
-                    <span>★ Proposals &amp; Leads with AI</span>
+                    <span>★ Proposals with Claude AI</span>
                   </div>
                   <div className="text-[10px] text-slate-400 font-mono mt-0.5">
                     Friday, Nov 27 • 9:30 AM CST
@@ -246,11 +246,11 @@ const Navbar = () => {
                 └ Websites with AI 2027 (Nov 20)
               </Link>
               <Link 
-                to="/webinars/automated-proposal-and-lead-generation-with-ai" 
+                to="/webinars/business-proposals-with-claude-ai" 
                 onClick={() => setIsOpen(false)} 
                 className="text-[#cb4b16] hover:text-[#e05822] py-1 text-xs font-extrabold tracking-widest uppercase"
               >
-                ★ Proposals &amp; Leads with AI (Nov 27)
+                ★ Proposals with Claude AI (Nov 27)
               </Link>
             </div>
 
@@ -320,7 +320,7 @@ const Footer = () => (
         <Link to="/upgrade-your-website-for-2027" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Upgrade 2027</Link>
         <Link to="/webinars/video-editing-with-ai" className="text-slate-400 hover:text-white transition-colors">Video AI</Link>
         <Link to="/webinars/websites-with-ai-2027" className="text-slate-400 hover:text-white transition-colors">Websites AI</Link>
-        <Link to="/webinars/automated-proposal-and-lead-generation-with-ai" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Proposals &amp; Leads AI</Link>
+        <Link to="/webinars/business-proposals-with-claude-ai" className="text-[#cb4b16] hover:text-[#e05822] transition-colors">Proposals w/ Claude AI</Link>
         <Link to="/blog" className="hover:text-white transition-colors">Insights</Link>
         <Link to="/#leadership" className="hover:text-white transition-colors">Leadership</Link>
         <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
@@ -410,7 +410,11 @@ export default function App() {
               <Route path="/make-your-website-generate-leads-for-you-in-2027" element={<WebinarWebsites2027 />} />
               <Route path="/make-your-website-generate-leads-for-you-in-2027/" element={<WebinarWebsites2027 />} />
 
-              {/* Automated Proposals & Lead Gen Webinar routes */}
+              {/* Business Proposals with Claude AI Workshop routes */}
+              <Route path="/webinars/business-proposals-with-claude-ai" element={<WebinarProposals2026 />} />
+              <Route path="/webinars/business-proposals-with-claude-ai/" element={<WebinarProposals2026 />} />
+              <Route path="/creating-winning-business-proposals-with-claude-ai" element={<WebinarProposals2026 />} />
+              <Route path="/creating-winning-business-proposals-with-claude-ai/" element={<WebinarProposals2026 />} />
               <Route path="/webinars/automated-proposal-and-lead-generation-with-ai" element={<WebinarProposals2026 />} />
               <Route path="/webinars/automated-proposal-and-lead-generation-with-ai/" element={<WebinarProposals2026 />} />
               <Route path="/webinars/automated-proposal-lead-generation" element={<WebinarProposals2026 />} />
