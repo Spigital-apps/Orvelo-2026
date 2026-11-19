@@ -22,14 +22,12 @@ import {
   FileText, 
   Star,
   Laptop,
-  ExternalLink,
   Users,
   Target,
   Zap,
   Globe
 } from 'lucide-react';
-
-const CALENDLY_URL = "https://calendly.com/mail-orvelo/generate-leads-website-2027";
+import { WebinarRegistrationForm } from '../components/WebinarRegistrationForm';
 
 export const WebinarWebsites2027 = () => {
   // Video player state
@@ -68,6 +66,13 @@ export const WebinarWebsites2027 = () => {
     if (!videoRef.current) return;
     if (videoRef.current.requestFullscreen) {
       videoRef.current.requestFullscreen();
+    }
+  };
+
+  const scrollToRegistration = () => {
+    const el = document.getElementById('registration-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -242,15 +247,13 @@ export const WebinarWebsites2027 = () => {
 
         {/* Floating Quick Action overlay on desktop banner */}
         <div className="absolute bottom-6 right-6 hidden sm:flex items-center gap-3 z-10">
-          <a 
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={scrollToRegistration}
             className="px-6 py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 inline-flex items-center gap-2"
           >
             <span>Register Free</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
           <button 
             onClick={scrollToVideo}
             className="px-6 py-3 bg-black/80 hover:bg-black text-white border border-white/20 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 inline-flex items-center gap-2 backdrop-blur-md"
@@ -319,15 +322,13 @@ export const WebinarWebsites2027 = () => {
 
         {/* Hero CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a 
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={scrollToRegistration}
             className="w-full sm:w-auto px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/25 active:scale-95 inline-flex items-center justify-center gap-3"
           >
             <span>Register Now</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
           <button 
             onClick={scrollToVideo}
             className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-sm active:scale-95 inline-flex items-center justify-center gap-2"
@@ -894,54 +895,15 @@ export const WebinarWebsites2027 = () => {
               </div>
             </div>
 
-            {/* Calendly Registration Card */}
-            <div className="max-w-xl mx-auto p-8 sm:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md text-center shadow-xl">
-              <div className="w-16 h-16 rounded-2xl bg-[#cb4b16]/20 border border-[#cb4b16]/30 text-[#cb4b16] flex items-center justify-center mx-auto mb-6">
-                <Calendar className="w-8 h-8" />
-              </div>
-
-              <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-3">
-                Register Instantly via Calendly
-              </h3>
-
-              <p className="text-xs sm:text-sm text-slate-300 mb-8 leading-relaxed max-w-md mx-auto">
-                Reserve your spot on Calendly to receive your automatic calendar invite with direct joining credentials.
-              </p>
-
-              <div className="space-y-3 mb-8 text-left max-w-md mx-auto">
-                <div className="flex items-center gap-3 text-xs text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>100% Free Live Online Access</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Instant Calendar Invite (Google, Outlook, Apple)</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Live Q&amp;A directly with Anand &amp; Kevin</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>No technical or programming experience required</span>
-                </div>
-              </div>
-
-              <a 
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-black text-xs uppercase tracking-wider transition-all shadow-2xl shadow-[#cb4b16]/40 active:scale-95 group"
-              >
-                <span>Register Now on Calendly</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-
-              <div className="mt-5 text-[11px] text-slate-400 font-mono flex items-center justify-center gap-1.5">
-                <ExternalLink className="w-3 h-3 text-slate-400" />
-                <span>Opens registration at calendly.com/mail-orvelo</span>
-              </div>
-            </div>
+            <WebinarRegistrationForm
+              webinarSlug="websites-with-ai-2027"
+              webinarTitle="Make Your Website Generate Leads for You in 2027"
+              webinarDate="Friday, November 20, 2026 | 9:30 AM CST"
+              webinarFormat="Live Online Webinar"
+              designationPlaceholder="Founder, Marketing Director, Sales Leader, etc."
+              optionalFieldLabel="What would you like your website to automate or improve? (Optional)"
+              optionalFieldPlaceholder="e.g. Lead capture forms, AI enquiry follow-up, CRM tracking, automated quotes..."
+            />
           </div>
         </div>
       </section>
@@ -970,15 +932,13 @@ export const WebinarWebsites2027 = () => {
               </span>
             </div>
 
-            <a 
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={scrollToRegistration}
               className="px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/30 active:scale-95 inline-flex items-center gap-3"
             >
               <span>Register Now</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
 
             <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
               <span className="font-mono tracking-wider font-semibold text-slate-400">

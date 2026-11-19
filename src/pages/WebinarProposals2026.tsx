@@ -1,8 +1,9 @@
-import { useState, useRef, FormEvent, ChangeEvent } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { SEO } from '../components/SEO';
 import { SectionLabel } from '../components/SectionLabel';
+import { WebinarRegistrationForm } from '../components/WebinarRegistrationForm';
 import {
   Sparkles,
   ArrowRight,
@@ -20,10 +21,8 @@ import {
   FileText,
   Star,
   Laptop,
-  ExternalLink,
   Users,
   Target,
-  Check,
   FileCheck2,
   Workflow,
   ClipboardList,
@@ -34,8 +33,6 @@ import {
   MessageSquareQuote
 } from 'lucide-react';
 
-const CALENDLY_URL = "https://calendly.com/orvelo-info/30min";
-
 export const WebinarProposals2026 = () => {
   // Video player state
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -45,64 +42,6 @@ export const WebinarProposals2026 = () => {
 
   // FAQ Accordion State
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  // Registration Form State
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    companyName: '',
-    designation: '',
-    websiteUrl: '',
-    proposalTypes: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify({
-          access_key: "682f14ea-354d-4af0-919e-86c7566732ec",
-          subject: "New Workshop Registration: Creating Winning Business Proposals with Claude AI",
-          name: formData.name,
-          email: formData.email,
-          companyName: formData.companyName,
-          designation: formData.designation,
-          websiteUrl: formData.websiteUrl,
-          proposalTypes: formData.proposalTypes,
-          workshopDate: "Friday, November 27, 2026 | 9:30 AM CST",
-          message: `Workshop Registration: Creating Winning Business Proposals with Claude AI\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.companyName}\nRole / Designation: ${formData.designation || 'Not specified'}\nWebsite: ${formData.websiteUrl || 'Not specified'}\nProposal Types: ${formData.proposalTypes || 'Not specified'}`
-        })
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        setIsSubmitted(true);
-      } else {
-        setSubmitError(result.message || "Failed to submit registration. Please try again.");
-      }
-    } catch (err) {
-      console.error("Submission error:", err);
-      setSubmitError("Network error. Please try again or register directly via Calendly.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const toggleVideoPlayback = () => {
     if (!videoRef.current) return;
@@ -1013,163 +952,15 @@ export const WebinarProposals2026 = () => {
               </div>
             </div>
 
-            {/* Registration Form / Success State */}
-            {isSubmitted ? (
-              <div className="max-w-xl mx-auto p-8 rounded-3xl bg-white/10 border border-white/20 text-center backdrop-blur-md">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
-                  <Check className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-2">
-                  You&apos;re Registered!
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
-                  Thank you for registering for <strong>Creating Winning Business Proposals with Claude AI</strong>. We have sent the confirmation and joining instructions to your email.
-                </p>
-                <div className="p-4 rounded-2xl bg-black/40 border border-white/10 text-xs font-mono text-slate-300 mb-6">
-                  Friday, November 27, 2026 • 9:30 AM CST • Live Online Workshop
-                </div>
-                <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all"
-                >
-                  <span>Add to Calendar / Book Discussion</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            ) : (
-              <div className="max-w-2xl mx-auto">
-                <form onSubmit={handleFormSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Sarah Jenkins"
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Business Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="sarah@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Company Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="companyName"
-                        required
-                        value={formData.companyName}
-                        onChange={handleInputChange}
-                        placeholder="Acme Global Solutions"
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                        Your Role / Designation
-                      </label>
-                      <input
-                        type="text"
-                        name="designation"
-                        value={formData.designation}
-                        onChange={handleInputChange}
-                        placeholder="Founder, Sales Director, Consultant, etc."
-                        className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                      Company Website
-                    </label>
-                    <input
-                      type="text"
-                      name="websiteUrl"
-                      value={formData.websiteUrl}
-                      onChange={handleInputChange}
-                      placeholder="https://example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
-                      What kind of business proposals do you create? (Optional)
-                    </label>
-                    <textarea
-                      name="proposalTypes"
-                      rows={2}
-                      value={formData.proposalTypes}
-                      onChange={handleInputChange}
-                      placeholder="e.g. Consulting retainers, industrial equipment RFQs, agency SOWs, software implementation quotes..."
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#cb4b16] transition-colors resize-none"
-                    />
-                  </div>
-
-                  {submitError && (
-                    <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/30 text-xs text-red-300">
-                      {submitError}
-                    </div>
-                  )}
-
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full sm:w-auto px-10 py-4 bg-[#cb4b16] hover:bg-[#b33f11] text-white rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#cb4b16]/30 active:scale-95 inline-flex items-center justify-center gap-2 disabled:opacity-50"
-                    >
-                      {isSubmitting ? (
-                        <span>Registering...</span>
-                      ) : (
-                        <>
-                          <span>Register Now</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
-
-                    <div className="text-center sm:text-right">
-                      <span className="text-[11px] text-slate-400 block">Prefer to register through Calendly?</span>
-                      <a
-                        href={CALENDLY_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-[#cb4b16] hover:underline font-bold inline-flex items-center gap-1"
-                      >
-                        <span>Register via Calendly</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            )}
+            <WebinarRegistrationForm
+              webinarSlug="business-proposals-with-claude-ai"
+              webinarTitle="Creating Winning Business Proposals with Claude AI"
+              webinarDate="Friday, November 27, 2026 | 9:30 AM CST"
+              webinarFormat="Live Online Workshop"
+              designationPlaceholder="Founder, Sales Director, Consultant, etc."
+              optionalFieldLabel="What kind of business proposals do you create? (Optional)"
+              optionalFieldPlaceholder="e.g. Consulting retainers, industrial equipment RFQs, agency SOWs, software implementation quotes..."
+            />
           </div>
         </div>
       </section>

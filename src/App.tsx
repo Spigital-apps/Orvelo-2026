@@ -19,6 +19,7 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { Webinar } from './pages/Webinar';
 import { WebinarWebsites2027 } from './pages/WebinarWebsites2027';
 import { WebinarProposals2026 } from './pages/WebinarProposals2026';
+import { WebinarThankYou } from './pages/WebinarThankYou';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { OrveloLogo } from './components/OrveloLogo';
@@ -423,6 +424,10 @@ export default function App() {
               <Route path="/automated-proposal-and-lead-generation-with-ai/" element={<WebinarProposals2026 />} />
               <Route path="/automated-proposal-lead-generation-ai" element={<WebinarProposals2026 />} />
               <Route path="/automated-proposal-lead-generation-ai/" element={<WebinarProposals2026 />} />
+
+              {/* Common Webinar Thank You Page */}
+              <Route path="/webinars/thank-you" element={<WebinarThankYou />} />
+              <Route path="/webinars/thank-you/" element={<WebinarThankYou />} />
 
               <Route path="/industries" element={<Industries />} />
               <Route path="/the-discovery-sprint" element={<DiscoverySprint />} />
